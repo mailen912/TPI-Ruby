@@ -1,8 +1,8 @@
+
+
 module Polycon
   module Commands
     module Professionals
-      require '$HOME/.polycon/models/professional.rb'
-      require '$HOME/.polycon/models/app.rb'
       class Create < Dry::CLI::Command
         desc 'Create a professional'
 
@@ -14,7 +14,7 @@ module Polycon
         ]
 
         def call(name:, **)
-          Polycon::Models::App.add_professional(name)
+          Polycon::Models::Professional.add_professional(name)
           #warn "TODO: Implementar creación de un o una profesional con nombre '#{name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
