@@ -12,6 +12,7 @@ module Polycon
             end
         
             def self.list_professionals
+                puts "Listando"
                 @@professionals.each do |person|
                     puts person.name
                 end
