@@ -35,7 +35,14 @@ module Polycon
         ]
 
         def call(name: nil)
-          warn "TODO: Implementar borrado de la o el profesional con nombre '#{name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          begin
+            Polycon::Models::Professional.delete(name)
+          rescue => e
+            warn e.message
+          else
+            puts "Se elimino al profesional #{name} exitosamente"
+          end
+            #warn "TODO: Implementar borrado de la o el profesional con nombre '#{name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
 

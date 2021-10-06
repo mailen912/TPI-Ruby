@@ -9,7 +9,7 @@ module Polycon
                 @appointments=[]
             end
             def self.rename(old_name,new_name)
-                if File.exist?("#{Dir.home}/.polycon/#{old_name}")
+                if Dir.exist?("#{Dir.home}/.polycon/#{old_name}")
                     File.rename("#{Dir.home}/.polycon/#{old_name}","#{Dir.home}/.polycon/#{new_name}")
                     a_professional=Professional.new(new_name)
                 else
@@ -32,7 +32,7 @@ module Polycon
         
             def self.create(name)
                #@@professionals << a_professional #esta mal??
-               if File. exist?("#{Dir.home}/.polycon")
+               if Dir.exist?("#{Dir.home}/.polycon")
                  todos = Dir.entries("#{Dir.home}/.polycon")
                  existe = todos.any? {|prof| prof == name}
                else
@@ -52,6 +52,16 @@ module Polycon
             #def tiene_turnos?
              #  (self.appointments).empty?
             #end
+            def self.delete (name)
+                if not Dir.exist?("#{Dir.home}/.polycon/#{name}")
+                    raise "El profesional que intenta eliminar no existe"
+                elsif not Dir.empty?("#{Dir.home}/.polycon/#{name}")
+                    raise "El profesional que intenta eliminar tiene turnos"
+                else
+                    Dir.delete("#{Dir.home}/.polycon/#{name}")
+                    
+                end
+            end
 
         end
     end
