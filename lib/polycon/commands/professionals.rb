@@ -14,10 +14,15 @@ module Polycon
         ]
 
         def call(name:, **)
-          Polycon::Models::Professional.add_professional(name)
+          begin
+            professional = Polycon::Models::Professional.create(name)
+            puts "Se agrego un profesional exitosamente"
+          rescue 
+            warn "El profesional que intenta crear, ya existe"
           #warn "TODO: Implementar creación de un o una profesional con nombre '#{name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
+    end
 
       class Delete < Dry::CLI::Command
         desc 'Delete a professional (only if they have no appointments)'
@@ -42,10 +47,22 @@ module Polycon
         ]
 
         def call(*)
-          Polycon::Models::Professional.list_professionals()
+          begin
+            todos = Polycon::Models::Professional.list_professionals()
+            if todos.empty?
+              puts "No hay profesionales guardados"
+            else
+              todos.each do |prof| 
+                puts prof
+              end
+            end
+          rescue
+            warn "No hay profesionales guardados"
+          end
           #warn "TODO: Implementar listado de profesionales.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
+    
 
       class Rename < Dry::CLI::Command
         desc 'Rename a professional'
@@ -58,7 +75,13 @@ module Polycon
         ]
 
         def call(old_name:, new_name:, **)
-          warn "TODO: Implementar renombrado de profesionales con nombre '#{old_name}' para que pase a llamarse '#{new_name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          begin
+            Polycon::Models::Professional.rename(old_name,new_name)
+            puts "#{old_name} ahora es #{new_name}"
+          rescue
+            warn "No existe el profesional ingresado"
+          end
+          #warn "TODO: Implementar renombrado de profesionales con nombre '#{old_name}' para que pase a llamarse '#{new_name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
     end
