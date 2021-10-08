@@ -56,15 +56,11 @@ module Polycon
         def call(*)
           begin
             todos = Polycon::Models::Professional.list_professionals()
-            if todos.empty?
-              puts "No hay profesionales guardados"
-            else
-              todos.each do |prof| 
-                puts prof
-              end
+            todos.each do |prof| 
+              puts prof
             end
-          rescue
-            warn "No hay profesionales guardados"
+          rescue => e
+            warn e.message
           end
           #warn "TODO: Implementar listado de profesionales.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
@@ -85,8 +81,8 @@ module Polycon
           begin
             Polycon::Models::Professional.rename(old_name,new_name)
             puts "#{old_name} ahora es #{new_name}"
-          rescue
-            warn "No existe el profesional ingresado"
+          rescue => e
+            warn e.message
           end
           #warn "TODO: Implementar renombrado de profesionales con nombre '#{old_name}' para que pase a llamarse '#{new_name}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end

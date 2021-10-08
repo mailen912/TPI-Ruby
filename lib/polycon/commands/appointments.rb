@@ -16,7 +16,14 @@ module Polycon
         ]
 
         def call(date:, professional:, name:, surname:, phone:, notes: nil)
-          warn "TODO: Implementar creación de un turno con fecha '#{date}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          begin
+            Polycon::Models::Appointment.create(date,professional,name,surname,phone,notes)
+            puts "Se creo el turno exitosamente"
+          rescue => exception
+            warn exception.message
+            
+          end
+          #warn "TODO: Implementar creación de un turno con fecha '#{date}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
 
@@ -46,7 +53,14 @@ module Polycon
         ]
 
         def call(date:, professional:)
-          warn "TODO: Implementar borrado de un turno con fecha '#{date}' y profesional '#{professional}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          begin
+            Polycon::Models::Appointment.cancel(date,professional)
+            puts "El turno fue cancelado exitosamente"
+          rescue => exception
+            warn exception.message
+          end
+          
+          #warn "TODO: Implementar borrado de un turno con fecha '#{date}' y profesional '#{professional}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
 
@@ -60,7 +74,13 @@ module Polycon
         ]
 
         def call(professional:)
-          warn "TODO: Implementar borrado de todos los turnos de la o el profesional '#{professional}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          begin
+            Polycon::Models::Appointment.cancel_all(professional)
+            puts "Se cancelaron todos los turnos del profesional #{professional}"
+          rescue => exception
+            warn exception.message
+          end
+         # warn "TODO: Implementar borrado de todos los turnos de la o el profesional '#{professional}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
 
@@ -92,7 +112,14 @@ module Polycon
         ]
 
         def call(old_date:, new_date:, professional:)
-          warn "TODO: Implementar cambio de fecha de turno con fecha '#{old_date}' para que pase a ser '#{new_date}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          begin
+            Polycon::Models::Appointment.reschedule(old_date,new_date,professional)
+            puts "Se reagendo el turno exitosamente"
+          rescue => exception
+            warn exception.message
+            
+          end
+          #warn "TODO: Implementar cambio de fecha de turno con fecha '#{old_date}' para que pase a ser '#{new_date}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
 
