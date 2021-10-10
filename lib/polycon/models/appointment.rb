@@ -34,6 +34,24 @@ module Polycon
                 
             end
 
+            def read_file(turno)
+                File.open(turno,'r') do |f|
+                    self.surname=f.gets.chomp
+                    self.name=f.gets.chomp
+                    self.phone=f.gets.chomp
+                    self.notes=f.gets.chomp
+                end
+            end
+
+            def save_file(turno)
+                File.open( turno, "w+") do |f|
+                    f.write( "#{self.surname} \n")
+                    f.write( "#{self.name} \n")
+                    f.write( "#{self.phone} \n")
+                    f.write( "#{self.notes} \n")
+                end
+            end
+
             def self.create(date,professional, name, surname, phone, notes="")
                 a_professional=Polycon::Models::Professional.new(professional)
                 
@@ -50,18 +68,17 @@ module Polycon
                 if an_appointment.exists?
                      raise "La fecha ingresada no esta disponible, por favor solicite otra"
                 end
+                an_appointment.name=name
+                an_appointment.surname=surname
+                an_appointment.phone=phone
+                an_appointment.notes=notes
                 name_file=date.gsub(" ","_").gsub(":","-")
-                FileUtils.cd(directorio) do
-                    File.new "#{name_file}.paf", "w"
-                    File.open( "#{name_file}.paf", "w+") do |f|
-                        f.write( "#{surname} \n")
-                        f.write( "#{name} \n")
-                        f.write( "#{phone} \n")
-                        f.write( "#{notes} \n")
-                    end
-                end
+                turno="#{Dir.home}/.polycon/#{professional}/#{name_file}.paf"
+                an_appointment.save_file(turno)
                 return an_appointment
             end
+
+
             def self.reschedule(old_date, new_date, professional)
                 a_professional=Professional.new(professional)
                 if not a_professional.exists?
@@ -103,10 +120,52 @@ module Polycon
                 FileUtils.rm(turno)
                 
             end
-
             
+            def self.show(date, professional)
+                a_professional=Professional.new(professional)
+                if not a_professional.exists?
+                    raise "El profesional que ingresa no existe"
+                end
+                an_appointment=Appointment.new(date,professional)
+                if not an_appointment.exists?
+                    raise "El turno que intenta visualizar no existe"
+                end
+                name_file=date.gsub(" ","_").gsub(":","-")
+                turno="#{Dir.home}/.polycon/#{professional}/#{name_file}.paf" 
+                an_appointment.read_file(turno)
+                return an_appointment
 
-            
+            end
+
+            def self.edit(date,professional,options)
+                a_professional=Professional.new(professional)
+                if not a_professional.exists?
+                    raise "El profesional que ingresa no existe"
+                end
+                an_appointment=Appointment.new(date,professional)
+                if not an_appointment.exists?
+                    raise "El turno que intenta modificar no existe"
+                end
+                name_file=date.gsub(" ","_").gsub(":","-")
+                turno="#{Dir.home}/.polycon/#{professional}/#{name_file}.paf"  
+                an_appointment.read_file(turno)
+                if options.has_key?(:surname)
+                    an_appointment.surname=options[:surname]
+                end
+                if options.has_key?(:name)
+                    an_appointment.name=options[:name]
+                end
+                if options.has_key?(:phone)
+                    an_appointment.phone=options[:phone]
+                end
+                if options.has_key?(:notes)
+                    an_appointment.notes=options[:notes]
+                end
+                an_appointment.save_file(turno)
+                return an_appointment
+
+            end
+             
 
         end
     end
