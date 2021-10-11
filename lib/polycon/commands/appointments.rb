@@ -107,16 +107,16 @@ module Polycon
           '"Alma Estevez" --date="2021-09-16" # Lists appointments for Alma Estevez on the specified date'
         ]
 
-        def call(professional:)
+        def call(professional:, date:nil)
           begin
-            todo=Polycon::Models::Appointment.list(professional)
+            todo=Polycon::Models::Appointment.list(professional, date)
             puts "Los turnos para el profesional #{professional}"
-            for t in todo
+            todo.each do |t|
               puts t
             end
           rescue => e
             warn e.message          
-          #warn "TODO: Implementar listado de turnos de la o el profesional '#{professional}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+          warn "TODO: Implementar listado de turnos de la o el profesional '#{professional}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
           end
         end
       end

@@ -165,6 +165,31 @@ module Polycon
                 return an_appointment
 
             end
+
+            def self.list(professional, date="")
+                a_professional=Professional.new(professional)
+                if not a_professional.exists?
+                    raise "El profesional que ingresa no existe"
+                end
+                turnos=[]
+                if date != ""#es una fecha
+                    
+                    Dir.entries("#{Dir.home}/.polycon/#{professional}").each do |fecha|
+                        if fecha.split("_")[0] == date
+                            turnos.push(fecha)
+                        end
+                    end
+                else
+                    Dir.entries("#{Dir.home}/.polycon/#{professional}").each do |fecha|
+                        
+                        turnos.push(fecha)
+                        
+                    end
+                    
+                end
+                return turnos
+            end
+
              
 
         end
