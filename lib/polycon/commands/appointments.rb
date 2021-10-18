@@ -110,13 +110,23 @@ module Polycon
         def call(professional:, date:nil)
           begin
             todo=Polycon::Models::Appointment.list(professional, date)
-            puts "Los turnos para el profesional #{professional}"
-            todo.each do |t|
-              puts t
+            if date
+              hay_fecha=" y la fecha #{date}"
+            else
+              hay_fecha=""
             end
-          rescue => e
-            warn e.message          
-          warn "TODO: Implementar listado de turnos de la o el profesional '#{professional}'.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+            if todo.empty?
+              puts "No hay turnos para el profesional #{professional}#{hay_fecha}"
+            else
+            
+              puts "Los turnos para el profesional #{professional} #{hay_fecha}"
+              todo.each do |t|
+                puts t
+              end
+            end
+            rescue => e
+              warn e.message          
+          
           end
         end
       end
