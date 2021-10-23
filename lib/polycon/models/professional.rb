@@ -1,4 +1,3 @@
-prof
 require 'fileutils'
 module Polycon
     module Models
