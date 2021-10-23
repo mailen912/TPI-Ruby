@@ -24,9 +24,7 @@ module Polycon
 
             def valid_date?
                 begin
-                    print("acaaaa")
-                    print(self.date)
-                    print(DateTime.parse(self.date))
+                    DateTime.strptime(self.date , "%Y-%m-%d %H:%M ")
                     return true
                 rescue => exception
                     return false #No es valida la fecha
@@ -34,121 +32,110 @@ module Polycon
                 
             end
 
-            def read_file(turno)
-                File.open(turno,'r') do |f|
-                    self.surname=f.gets.chomp
-                    self.name=f.gets.chomp
-                    self.phone=f.gets.chomp
-                    self.notes=f.gets.chomp
+            def valid_day?
+                begin
+                    DateTime.strptime(self.date , "%Y-%m-%d")
+                    return true
+                rescue => exception
+                    return false #No es valida la fecha
                 end
-            end
+                
+            end 
 
-            def save_file(turno)
-                File.open( turno, "w+") do |f|
-                    f.write( "#{self.surname} \n")
-                    f.write( "#{self.name} \n")
-                    f.write( "#{self.phone} \n")
-                    f.write( "#{self.notes} \n")
-                end
-            end
+
+
+            
 
             def self.create(date,professional, name, surname, phone, notes="")
-                a_professional=Polycon::Models::Professional.new(professional)
                 
-                directorio="#{Dir.home}/.polycon/#{professional}"
-
-                if not a_professional.exists?
+                if not Store.professional_exists?(professional)
                     raise "El profesional que ingresa no existe"
                 end
-                #name_file=date.gsub(" ","_").gsub(":","-")
                 an_appointment=Appointment.new(date,professional)
-                #if not an_appointment.valid_date?
-                #    raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
-                #end
-                if an_appointment.exists?
+                if not an_appointment.valid_date?
+                    raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
+                end
+                if Store.appointment_exists?(professional,date)
                      raise "La fecha ingresada no esta disponible, por favor solicite otra"
                 end
                 an_appointment.name=name
                 an_appointment.surname=surname
                 an_appointment.phone=phone
                 an_appointment.notes=notes
-                name_file=date.gsub(" ","_").gsub(":","-")
-                turno="#{Dir.home}/.polycon/#{professional}/#{name_file}.paf"
-                an_appointment.save_file(turno)
+                Store.save_appointment(an_appointment)
                 return an_appointment
             end
 
 
             def self.reschedule(old_date, new_date, professional)
-                a_professional=Professional.new(professional)
-                if not a_professional.exists?
+                if not Store.professional_exists?(professional)
                     raise "El profesional que ingresa no existe"
+                end
+                an_old_appointment=Appointment.new(old_date,professional)
+                a_new_appointment=Appointment.new(new_date,professional)
+                if not an_old_appointment.valid_date? or not a_new_appointment.valid_date?
+                    raise "Por favor, ingrese fechas validas. Por ejemplo:'2021-09-30 13:00'"
+                end
+                if not Store.appointment_exists?(professional, old_date)
+                    raise "No existe el turno con fecha y hora #{old_date} para el profesional #{professional}"
                 else
-                    old_name_file=old_date.gsub(" ","_").gsub(":","-")
-                    old_appointment=Appointment.new(old_name_file,professional)
-                    new_name_file=new_date.gsub(" ","_").gsub(":","-")
-                    if not old_appointment.exists?
-                        raise "No existe el turno con fecha y hora #{old_date} para el profesional #{professional}"
-                    else
-                        File.rename("#{Dir.home}/.polycon/#{professional}/#{old_name_file}.paf","#{Dir.home}/.polycon/#{professional}/#{new_name_file}.paf")
-                    end
+                    Store.rename_appointment(old_date,new_date,professional)
+                    return a_new_appointment
                 end
             end
+            
 
             def self.cancel_all(professional)
-                a_professional=Professional.new(professional)
-                if not a_professional.exists?
-                    
+                if not Store.professional_exists?(professional)
                     raise "El profesional que ingresa no existe"
                 end
-                directorio="#{Dir.home}/.polycon/#{professional}" 
-                FileUtils.rm_rf(directorio)
-                Professional.create(professional)
+                Store.cancel_all_appointments(professional)
+                
             end
 
             def self.cancel(date,professional)
-                a_professional=Professional.new(professional)
-                if not a_professional.exists?
+                if not Store.professional_exists?(professional)
                     raise "El profesional que ingresa no existe"
                 end
                 an_appointment=Appointment.new(date,professional)
-                if not an_appointment.exists?
+                if not an_appointment.valid_date?
+                    raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
+                end
+                if not Store.appointment_exists?(professional,date)
                     raise "El turno que intenta cancelar no existe"
                 end
-                name_file=date.gsub(" ","_").gsub(":","-")
-                turno="#{Dir.home}/.polycon/#{professional}/#{name_file}.paf" 
-                FileUtils.rm(turno)
+                Store.cancel_appointment(professional,date)
                 
             end
             
             def self.show(date, professional)
-                a_professional=Professional.new(professional)
-                if not a_professional.exists?
+                if not Store.professional_exists?(professional)
                     raise "El profesional que ingresa no existe"
                 end
                 an_appointment=Appointment.new(date,professional)
-                if not an_appointment.exists?
+                if not an_appointment.valid_date?
+                    raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
+                end
+                if not Store.appointment_exists?(professional,date)
                     raise "El turno que intenta visualizar no existe"
                 end
-                name_file=date.gsub(" ","_").gsub(":","-")
-                turno="#{Dir.home}/.polycon/#{professional}/#{name_file}.paf" 
-                an_appointment.read_file(turno)
-                return an_appointment
+                Store.read_appointment(an_appointment)
+                
 
             end
 
             def self.edit(date,professional,options)
-                a_professional=Professional.new(professional)
-                if not a_professional.exists?
+                if not Store.professional_exists?(professional)
                     raise "El profesional que ingresa no existe"
                 end
                 an_appointment=Appointment.new(date,professional)
-                if not an_appointment.exists?
-                    raise "El turno que intenta modificar no existe"
+                if not an_appointment.valid_date?
+                    raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
                 end
-                name_file=date.gsub(" ","_").gsub(":","-")
-                turno="#{Dir.home}/.polycon/#{professional}/#{name_file}.paf"  
-                an_appointment.read_file(turno)
+                if not Store.appointment_exists?(professional,date)
+                    raise "El turno que intenta editar no existe"
+                end
+                an_appointment=Store.read_appointment(an_appointment)
                 if options.has_key?(:surname)
                     an_appointment.surname=options[:surname]
                 end
@@ -161,32 +148,25 @@ module Polycon
                 if options.has_key?(:notes)
                     an_appointment.notes=options[:notes]
                 end
-                an_appointment.save_file(turno)
-                return an_appointment
+                
+                Store.save_appointment(an_appointment)
 
             end
 
             def self.list(professional, date=nil)
-                a_professional=Professional.new(professional)
-                if not a_professional.exists?
+                if not Store.professional_exists?(professional)
                     raise "El profesional que ingresa no existe"
                 end
                 turnos=[]
                 if date #es una fecha
-                    Dir.entries("#{Dir.home}/.polycon/#{professional}").each do |fecha|
-                        if fecha.split("_")[0] == date
-
-                            turnos.push(fecha.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""))
-                        end
+                    an_appointment=Appointment.new(date,professional)
+                    if not an_appointment.valid_day?
+                        raise "El dia ingresado no es valido. Ejemplo de formato valido:'2021-10-11' "
                     end
+                    turnos=Store.get_appointments_by_professional_and_day(professional,date)
 
                 else
-                    Dir.entries("#{Dir.home}/.polycon/#{professional}").each do |fecha|
-                        
-                        turnos.push(fecha.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""))
-                        
-                        
-                    end
+                    turnos=Store.get_appointments_by_professional(professional)
                     
                 end
                 return turnos
