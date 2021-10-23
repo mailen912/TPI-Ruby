@@ -1,37 +1,27 @@
+prof
 require 'fileutils'
 module Polycon
     module Models
         class Professional
-            #prueba
             attr_accessor :name
             #@@professionals=[]
             def initialize(name)
                 @name=name
                 @appointments=[]
             end
-            
-            def exists?
-                # retorna un true si el profesional existe, y false si no
-                if  Dir.exist?("#{Dir.home}/.polycon/#{self.name}")
-                    return true
-                else 
-                    return false
-                end
-            end
 
             def self.rename(old_name,new_name)
-                a_professional=Professional.new(old_name)
-                if not a_professional.exists?
+                if not Store.professional_exists?(old_name)
                     raise "El profesional no existe"
                 else
-                    File.rename("#{Dir.home}/.polycon/#{old_name}","#{Dir.home}/.polycon/#{new_name}")
+                    Store.rename_professional(old_name,new_name)
                     a_professional=Professional.new(new_name)
                 end
             end
         
             def self.list_professionals
-                if File. exist?("#{Dir.home}/.polycon")
-                    todos = Dir.entries("#{Dir.home}/.polycon")
+                if Store.any_professional_exist?
+                    Store.professionals
                 else 
                     raise "No hay profesionales guardados"
                 end
@@ -44,20 +34,19 @@ module Polycon
         
             def self.create(name)
                #@@professionals << a_professional #esta mal??
-                a_professional=Professional.new(name)
-                if not a_professional.exists?
-                    FileUtils.mkdir_p "#{Dir.home}/.polycon/#{name}"
-                    return a_professional
+                if not Store.professional_exists?(name)
+                     Store.create_professional(name)
+                    a_professional=Professional.new(name)
+
                 else 
                     raise "El profesional que intenta crear ya existe"
                 end   
             end
             
             def self.delete (name)
-                a_professional= Professional.new(name)
-                if not a_professional.exists?
+                if not Store.professional_exists?(name)
                     raise "El profesional que intenta eliminar no existe"
-                elsif not Dir.empty?("#{Dir.home}/.polycon/#{name}")
+                elsif not Store.has_appointments?(name)
                     raise "El profesional que intenta eliminar tiene turnos"
                 else
                     Dir.delete("#{Dir.home}/.polycon/#{name}")
