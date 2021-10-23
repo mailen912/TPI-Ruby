@@ -2,6 +2,7 @@ require 'fileutils'
 module Polycon
     module Models
         class Professional
+            #prueba
             attr_accessor :name
             #@@professionals=[]
             def initialize(name)
