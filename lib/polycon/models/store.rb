@@ -79,6 +79,7 @@ module Polycon
 
                 File.open(appointment_path(an_appointment.professional,an_appointment.date),'r') do |f|
                     an_appointment.surname=f.gets.chomp
+                    #puts(an_appointment.surname)
                     an_appointment.name=f.gets.chomp
                     an_appointment.phone=f.gets.chomp
                     an_appointment.notes=f.gets.chomp
@@ -86,7 +87,18 @@ module Polycon
                 return an_appointment
             end
 
-    
+            def self.get_appointments_by_day(day)
+                turnos=[]
+                Dir.entries(root_path()).reject{|entry| entry == "." || entry == ".."}.each do |prof|
+                    Dir.entries(professional_path(prof)).reject{|entry| entry == "." || entry == ".."}.each do |date|
+                        if date.split("_")[0] == day
+                            an_appointment=Appointment.new(date.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""),prof)
+                            turnos.push(read_appointment(an_appointment))
+                        end
+                    end
+                end
+                turnos
+            end
 
             def self.get_appointments_by_professional(professional)
                 turnos=[]

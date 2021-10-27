@@ -182,7 +182,7 @@ module Polycon
         end
       end
 
-      class To_export < Dry::CLI::Command
+      class Export < Dry::CLI::Command
         desc 'To export information for appointments'
 
         argument :day, required: true, desc: 'Day for the appointment'
@@ -202,7 +202,7 @@ module Polycon
               puts appointment.name
               puts appointment.surname
             end
-            Polycon::Templates::Appointments_by_day.method
+            Polycon::Templates::Appointments_by_day.method(appointments)
           rescue => exception
             puts exception.message
           end

@@ -172,6 +172,24 @@ module Polycon
                 return turnos
             end
 
+            def self.to_export(day, professional=nil)
+                an_appointment=Appointment.new(day,professional)
+                if not an_appointment.valid_day?
+                    raise "El dia ingresado no es valido. Ejemplo de formato valido:'2021-10-11' "
+                end
+                if professional 
+                    if not Store.professional_exists?(professional)
+                        raise "El profesional que ingresa no existe"
+                    end
+                    turnos=Store.get_appointments_by_professional_and_day(professional,dat)
+
+                else
+                    turnos=Store.get_appointments_by_day(day)
+                    
+                end
+                return turnos
+            end
+
              
 
         end
