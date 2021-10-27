@@ -181,6 +181,36 @@ module Polycon
          # warn "TODO: Implementar modificación de un turno de la o el profesional '#{professional}' con fecha '#{date}', para cambiarle la siguiente información: #{options}.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
+
+      class To_export < Dry::CLI::Command
+        desc 'To export information for appointments'
+
+        argument :day, required: true, desc: 'Day for the appointment'
+        option :professional, required: true, desc: 'Full name of the professional'
+
+        example [
+          '"2021-09-16 " --professional="Alma Estevez" --name="New name" # It exports information about appointments in a particular day filtered by a professional.',
+          '"2021-09-16 " # It exports information about appointments in a particular day',
+    
+        ]
+
+        def call(day:, professional:nil)
+          begin
+            appointments = Polycon::Models::Appointment.to_export(day,professional)
+            for appointment in appointments 
+              puts appointment.date
+              puts appointment.name
+              puts appointment.surname
+            end
+            Polycon::Templates::Appointments_by_day.method
+          rescue => exception
+            puts exception.message
+          end
+          
+         # warn "TODO: Implementar modificación de un turno de la o el profesional '#{professional}' con fecha '#{date}', para cambiarle la siguiente información: #{options}.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+        end
+      end
+
     end
   end
 end
