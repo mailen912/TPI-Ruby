@@ -88,6 +88,7 @@ module Polycon
             end
 
             def self.get_appointments_by_day(day)
+                #este devuelve objetos appointments con el dia day 
                 turnos=[]
                 Dir.entries(root_path()).reject{|entry| entry == "." || entry == ".."}.each do |prof|
                     Dir.entries(professional_path(prof)).reject{|entry| entry == "." || entry == ".."}.each do |date|
@@ -97,6 +98,58 @@ module Polycon
                         end
                     end
                 end
+                turnos
+            end
+            def self.get_appointments_by_day_and_professional(day, professional)
+                #este devuelve objetos appointments con el dia day y el profesional professional
+                turnos=[]
+                    Dir.entries(professional_path(professional)).reject{|entry| entry == "." || entry == ".."}.each do |date|
+                        if date.split("_")[0] == day
+                            an_appointment=Appointment.new(date.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""),professional)
+                            turnos.push(read_appointment(an_appointment))
+                        end
+                    end
+                turnos
+            end
+
+            def self.get_week(day)
+                num_resta = Integer(Date.parse(day).strftime("%u"))-1 
+                monday = Date.parse(day) - num_resta
+                #puts monday
+                week=[]
+                week.push(monday.to_s)
+                for d in (1..5)
+                    week.push((monday + d).to_s)
+                    puts (monday + d).to_s
+                end
+                week
+            end
+
+
+            def self.get_appointments_by_week(week)
+                #este devuelve objetos appointments con el dias de la semanda en que se encuentra day 
+                turnos=[]
+                Dir.entries(root_path()).reject{|entry| entry == "." || entry == ".."}.each do |prof|
+                    Dir.entries(professional_path(prof)).reject{|entry| entry == "." || entry == ".."}.each do |date|
+                        if week.include?date.split("_")[0] 
+                            an_appointment=Appointment.new(date.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""),prof)
+                            turnos.push(read_appointment(an_appointment))
+                        end
+                    end
+                end
+                turnos
+            end
+            def self.get_appointments_by_week_and_professional(week, professional)
+            #este devuelve objetos appointments con el dias de la semanda en que se encuentra day 
+                turnos=[]
+                           
+                Dir.entries(professional_path(professional)).reject{|entry| entry == "." || entry == ".."}.each do |date|
+                    if week.include?date.split("_")[0] 
+                        an_appointment=Appointment.new(date.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""),professional)
+                        turnos.push(read_appointment(an_appointment))
+                    end
+                end
+                
                 turnos
             end
 

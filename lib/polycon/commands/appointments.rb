@@ -182,11 +182,12 @@ module Polycon
         end
       end
 
-      class Export < Dry::CLI::Command
-        desc 'To export information for appointments'
+      class ExportByDay < Dry::CLI::Command
+        include Polycon::Templates::Appointments_by_day
+        desc 'To export information for appointments by a particular day'
 
         argument :day, required: true, desc: 'Day for the appointment'
-        option :professional, required: true, desc: 'Full name of the professional'
+        option :professional, required: false, desc: 'Full name of the professional'
 
         example [
           '"2021-09-16 " --professional="Alma Estevez" --name="New name" # It exports information about appointments in a particular day filtered by a professional.',
@@ -196,18 +197,54 @@ module Polycon
 
         def call(day:, professional:nil)
           begin
-            appointments = Polycon::Models::Appointment.to_export(day,professional)
+            appointments = Polycon::Models::Appointment.to_export_by_day(day,professional)
             for appointment in appointments 
               puts appointment.date
               puts appointment.name
               puts appointment.surname
             end
-            Polycon::Templates::Appointments_by_day.method(appointments)
+            schedule =  Polycon::Models::Appointment.schedule
+            export_my_appointments(appointments,schedule,day)
+            #Polycon::Templates::Appointments_by_day
           rescue => exception
             puts exception.message
           end
           
          # warn "TODO: Implementar modificación de un turno de la o el profesional '#{professional}' con fecha '#{date}', para cambiarle la siguiente información: #{options}.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
+        end
+      end
+
+      class ExportByWeek < Dry::CLI::Command
+        include Polycon::Templates::Appointments_by_week
+        desc 'To export information for appointments by a particular week'
+
+        argument :day, required: true, desc: 'Day for the appointment'
+        option :professional, required: true, desc: 'Full name of the professional'
+
+        example [
+          '"2021-09-16 " --professional="Alma Estevez" --name="New name" # It exports information about appointments in a particular week filtered by a professional.',
+          '"2021-09-16 " # It exports information about appointments in a particular week',
+    
+        ]
+
+        def call(day:, professional:nil)
+          begin
+            appointments = Polycon::Models::Appointment.to_export_by_week(day,professional)
+            for appointment in appointments 
+              puts appointment.date
+              puts appointment.name
+              puts appointment.surname
+              puts appointment.professional
+            end
+            schedule =  Polycon::Models::Appointment.schedule
+            week=Polycon::Models::Appointment.get_week(day)
+            export_my_appointments(appointments,schedule,week)
+            #Polycon::Templates::Appointments_by_day
+          rescue => exception
+            puts exception.message
+          end
+          
+          #warn "TODO: Implementar modificación de un turno de la o el profesional  con fecha , para cambiarle la siguiente información: #{options}.\nPodés comenzar a hacerlo en #{__FILE__}:#{__LINE__}."
         end
       end
 

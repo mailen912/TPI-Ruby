@@ -13,14 +13,6 @@ module Polycon
                 self.notes=notes
             end
             
-            def exists?
-                name_file=self.date.gsub(" ","_").gsub(":","-")
-                if File.exist?"#{Dir.home}/.polycon/#{self.professional}/#{name_file}.paf"
-                   return  true
-                else 
-                   return false
-                end
-            end
 
             def valid_date?
                 begin
@@ -42,6 +34,25 @@ module Polycon
                 
             end 
 
+            def self.schedule
+                @schedule ||= begin
+                    schedule=[]
+                    (10..20).each do |hs|
+                        schedule.push("#{hs}:00")
+                        schedule.push("#{hs}:30")
+                    end
+                    schedule
+                end
+            end
+            def valid_time?(schedule)
+                
+                schedule.include?(self.date.split(" ")[1])
+                
+            end 
+
+            def is_sunday?
+                Date.parse(self.date.split(" ")[0]).strftime("%u") == "7"
+            end
 
 
             
@@ -53,7 +64,13 @@ module Polycon
                 end
                 an_appointment=Appointment.new(date,professional)
                 if not an_appointment.valid_date?
-                    raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
+                    raise "Por favor, ingrese una fecha con formato valido. Por ejemplo:'2021-09-30 13:00'"
+                end
+                if not an_appointment.valid_time?(schedule)
+                    raise "No se pudo crear el turno. Los horarios permitidos para sacar turno son entre las 10:00 y las 20:30 y solo en los minutos: 00 y 30. Por ejemplo: 11:30"
+                end
+                if  an_appointment.is_sunday?
+                    raise "No se dan turnos para los dias domingo"
                 end
                 if Store.appointment_exists?(professional,date)
                      raise "La fecha ingresada no esta disponible, por favor solicite otra"
@@ -75,6 +92,12 @@ module Polycon
                 a_new_appointment=Appointment.new(new_date,professional)
                 if not an_old_appointment.valid_date? or not a_new_appointment.valid_date?
                     raise "Por favor, ingrese fechas validas. Por ejemplo:'2021-09-30 13:00'"
+                end
+                if not a_new_appointment.valid_time?(schedule)
+                    raise "No se pudo reagendar el turno. Los horarios permitidos para sacar turno son entre las 10:00 y las 20:30 y solo en los minutos: 00 y 30. Por ejemplo: 11:30"
+                end
+                if  a_new_appointment.is_sunday?
+                    raise "No se dan turnos para los dias domingo"
                 end
                 if not Store.appointment_exists?(professional, old_date)
                     raise "No existe el turno con fecha y hora #{old_date} para el profesional #{professional}"
@@ -172,7 +195,7 @@ module Polycon
                 return turnos
             end
 
-            def self.to_export(day, professional=nil)
+            def self.to_export_by_day(day, professional=nil)
                 an_appointment=Appointment.new(day,professional)
                 if not an_appointment.valid_day?
                     raise "El dia ingresado no es valido. Ejemplo de formato valido:'2021-10-11' "
@@ -181,10 +204,42 @@ module Polycon
                     if not Store.professional_exists?(professional)
                         raise "El profesional que ingresa no existe"
                     end
-                    turnos=Store.get_appointments_by_professional_and_day(professional,dat)
+                    turnos=Store.get_appointments_by_day_and_professional(day, professional)
 
                 else
                     turnos=Store.get_appointments_by_day(day)
+                    
+                end
+                return turnos
+            end
+
+            def self.get_week(day)
+                num_resta = Integer(Date.parse(day).strftime("%u"))-1 
+                monday = Date.parse(day) - num_resta
+                #puts monday
+                week=[]
+                week.push(monday.to_s)
+                for d in (1..5)
+                    week.push((monday + d).to_s)
+                    puts (monday + d).to_s
+                end
+                week
+            end
+            def self.to_export_by_week(day, professional=nil)
+                an_appointment=Appointment.new(day,professional)
+                if not an_appointment.valid_day?
+                    raise "El dia ingresado no es valido. Ejemplo de formato valido:'2021-10-11' "
+                end
+                if professional 
+                    if not Store.professional_exists?(professional)
+                        raise "El profesional que ingresa no existe"
+                    end
+                    week = get_week(day)
+                    turnos=Store.get_appointments_by_week_and_professional(week, professional)
+
+                else
+                    week = get_week(day)
+                    turnos=Store.get_appointments_by_week(week)
                     
                 end
                 return turnos
