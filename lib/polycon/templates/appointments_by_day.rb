@@ -1,8 +1,8 @@
 require 'erb'
 module Polycon
     module Templates
-        module Appointments_by_day
-            def export_my_appointments(appointments, schedule, day)
+        module AppointmentsByDay
+            def self.export_my_appointments(appointments, schedule, day)
             for  paciente in appointments.find_all{ |app| app.date.split(" ")[1]=="10:00"}
                 puts paciente.name
             end

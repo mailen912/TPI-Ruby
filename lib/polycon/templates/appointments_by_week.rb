@@ -1,8 +1,8 @@
 require 'erb'
 module Polycon
     module Templates
-        module Appointments_by_week
-            def export_my_appointments(appointments, schedule, week)
+        module AppointmentsByWeek
+            def self.export_my_appointments(appointments, schedule, week)
             
             semana=%w[lunes martes miercoles jueves viernes sabado]
             

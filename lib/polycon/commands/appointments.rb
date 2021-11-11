@@ -38,7 +38,8 @@ module Polycon
 
         def call(date:, professional:)
           begin
-            an_appointment = Polycon::Models::Appointment.show(date,professional)
+            an_appointment = Polycon::Models::Appointment.new(date,professional)
+            an_appointment.show()
             puts "Visualizacion de detalles del turno con fecha #{date} para el profesional #{professional}"
             puts "Apellido: #{an_appointment.surname}"
             puts "Nombre: #{an_appointment.name}"
@@ -66,7 +67,8 @@ module Polycon
 
         def call(date:, professional:)
           begin
-            Polycon::Models::Appointment.cancel(date,professional)
+            an_appointment=Polycon::Models::Appointment.new(date,professional)
+            an_appointment.cancel()
             puts "El turno fue cancelado exitosamente"
           rescue => exception
             warn exception.message
@@ -183,7 +185,6 @@ module Polycon
       end
 
       class ExportByDay < Dry::CLI::Command
-        include Polycon::Templates::Appointments_by_day
         desc 'To export information for appointments by a particular day'
 
         argument :day, required: true, desc: 'Day for the appointment'
@@ -204,7 +205,7 @@ module Polycon
               puts appointment.surname
             end
             schedule =  Polycon::Models::Appointment.schedule
-            export_my_appointments(appointments,schedule,day)
+            Polycon::Templates::AppointmentsByDay.export_my_appointments(appointments,schedule,day)
             #Polycon::Templates::Appointments_by_day
           rescue => exception
             puts exception.message
@@ -215,7 +216,6 @@ module Polycon
       end
 
       class ExportByWeek < Dry::CLI::Command
-        include Polycon::Templates::Appointments_by_week
         desc 'To export information for appointments by a particular week'
 
         argument :day, required: true, desc: 'Day for the appointment'
@@ -238,7 +238,7 @@ module Polycon
             end
             schedule =  Polycon::Models::Appointment.schedule
             week=Polycon::Models::Appointment.get_week(day)
-            export_my_appointments(appointments,schedule,week)
+            Polycon::Templates::AppointmentsByWeek.export_my_appointments(appointments,schedule,week)
             #Polycon::Templates::Appointments_by_day
           rescue => exception
             puts exception.message

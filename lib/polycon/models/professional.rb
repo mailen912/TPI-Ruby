@@ -9,18 +9,22 @@ module Polycon
                 @appointments=[]
             end
 
-            def self.rename(old_name,new_name)
-                if not Store.professional_exists?(old_name)
+            def rename(new_name)
+                if not Store.professional_exists?(self.name)
                     raise "El profesional no existe"
                 else
-                    Store.rename_professional(old_name,new_name)
-                    a_professional=Professional.new(new_name)
+                    Store.rename_professional(self.name,new_name)
+                    self.name=new_name
                 end
             end
         
             def self.list_professionals
                 if Store.any_professional_exist?
-                    Store.professionals
+                    todos=[]
+                    for p in Store.professionals
+                        todos.push(Professional.new(p))
+                    end
+                    todos
                 else 
                     raise "No hay profesionales guardados"
                 end
@@ -42,13 +46,13 @@ module Polycon
                 end   
             end
             
-            def self.delete (name)
-                if not Store.professional_exists?(name)
+            def delete 
+                if not Store.professional_exists?(self.name)
                     raise "El profesional que intenta eliminar no existe"
-                elsif not Store.has_appointments?(name)
+                elsif not Store.has_appointments?(self.name)
                     raise "El profesional que intenta eliminar tiene turnos"
                 else
-                    Dir.delete("#{Dir.home}/.polycon/#{name}")
+                    Dir.delete("#{Dir.home}/.polycon/#{self.name}")
                     
                 end
             end

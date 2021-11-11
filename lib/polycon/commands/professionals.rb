@@ -36,7 +36,8 @@ module Polycon
 
         def call(name: nil)
           begin
-            Polycon::Models::Professional.delete(name)
+            a_professional = Polycon::Models::Professional.new(name)
+            a_professional.delete()
           rescue => e
             warn e.message
           else
@@ -57,7 +58,7 @@ module Polycon
           begin
             todos = Polycon::Models::Professional.list_professionals()
             todos.each do |prof| 
-              puts prof
+              puts prof.name
             end
           rescue => e
             warn e.message
@@ -79,8 +80,9 @@ module Polycon
 
         def call(old_name:, new_name:, **)
           begin
-            Polycon::Models::Professional.rename(old_name,new_name)
-            puts "#{old_name} ahora es #{new_name}"
+            a_professional = Polycon::Models::Professional.new(old_name)
+            a_professional.rename(new_name)
+            puts "#{old_name} ahora es #{a_professional.name}"
           rescue => e
             warn e.message
           end

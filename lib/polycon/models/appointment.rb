@@ -116,33 +116,32 @@ module Polycon
                 
             end
 
-            def self.cancel(date,professional)
-                if not Store.professional_exists?(professional)
+            def cancel()
+                if not Store.professional_exists?(self.professional)
                     raise "El profesional que ingresa no existe"
                 end
-                an_appointment=Appointment.new(date,professional)
-                if not an_appointment.valid_date?
+                
+                if self.valid_date?
                     raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
                 end
-                if not Store.appointment_exists?(professional,date)
+                if not Store.appointment_exists?(self.professional,self.date)
                     raise "El turno que intenta cancelar no existe"
                 end
-                Store.cancel_appointment(professional,date)
+                Store.cancel_appointment(self.professional,self.date)
                 
             end
             
-            def self.show(date, professional)
-                if not Store.professional_exists?(professional)
+            def show()
+                if not Store.professional_exists?(self.professional)
                     raise "El profesional que ingresa no existe"
                 end
-                an_appointment=Appointment.new(date,professional)
-                if not an_appointment.valid_date?
+                if not self.valid_date?
                     raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
                 end
-                if not Store.appointment_exists?(professional,date)
+                if not Store.appointment_exists?(self.professional,self.date)
                     raise "El turno que intenta visualizar no existe"
                 end
-                Store.read_appointment(an_appointment)
+                Store.read_appointment(self)
                 
 
             end
