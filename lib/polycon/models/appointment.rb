@@ -121,7 +121,7 @@ module Polycon
                     raise "El profesional que ingresa no existe"
                 end
                 
-                if self.valid_date?
+                if not self.valid_date?
                     raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
                 end
                 if not Store.appointment_exists?(self.professional,self.date)
@@ -146,32 +146,33 @@ module Polycon
 
             end
 
-            def self.edit(date,professional,options)
-                if not Store.professional_exists?(professional)
+            def edit(options)
+                if not Store.professional_exists?(self.professional)
                     raise "El profesional que ingresa no existe"
                 end
-                an_appointment=Appointment.new(date,professional)
-                if not an_appointment.valid_date?
+               
+                if not self.valid_date?
                     raise "Por favor, ingrese una fecha valida. Por ejemplo:'2021-09-30 13:00'"
                 end
-                if not Store.appointment_exists?(professional,date)
+                if not Store.appointment_exists?(self.professional,self.date)
                     raise "El turno que intenta editar no existe"
                 end
-                an_appointment=Store.read_appointment(an_appointment)
+                Store.read_appointment(self)
                 if options.has_key?(:surname)
-                    an_appointment.surname=options[:surname]
+                    self.surname=options[:surname]
                 end
                 if options.has_key?(:name)
-                    an_appointment.name=options[:name]
+                    self.name=options[:name]
                 end
                 if options.has_key?(:phone)
-                    an_appointment.phone=options[:phone]
+                    self.phone=options[:phone]
                 end
                 if options.has_key?(:notes)
-                    an_appointment.notes=options[:notes]
+                    self.notes=options[:notes]
                 end
                 
-                Store.save_appointment(an_appointment)
+                Store.save_appointment(self)
+                self
 
             end
 
@@ -185,7 +186,8 @@ module Polycon
                     if not an_appointment.valid_day?
                         raise "El dia ingresado no es valido. Ejemplo de formato valido:'2021-10-11' "
                     end
-                    turnos=Store.get_appointments_by_professional_and_day(professional,date)
+                    turnos=Store.get_appointments_by_day_and_professional(date, professional)
+                    
 
                 else
                     turnos=Store.get_appointments_by_professional(professional)

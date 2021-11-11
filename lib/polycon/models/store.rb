@@ -155,23 +155,15 @@ module Polycon
 
             def self.get_appointments_by_professional(professional)
                 turnos=[]
-                Dir.entries(professional_path(professional)).reject{|entry| entry == "." || entry == ".."}.each do |fecha|
-                    turnos.push(fecha.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""))
-                end
+                    Dir.entries(professional_path(professional)).reject{|entry| entry == "." || entry == ".."}.each do |date|
+                        an_appointment=Appointment.new(date.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""),professional)
+                        turnos.push(read_appointment(an_appointment))
+                        
+                    end
                 turnos
             end
 
-            def self.get_appointments_by_professional_and_day(professional,day)
-                turnos=[]
-                    Dir.entries(professional_path(professional)).reject{|entry| entry == "." || entry == ".."}.each do |fecha|
-                
-                        if fecha.split("_")[0] == day
-                            turnos.push(fecha.gsub("_"," ").reverse.sub("-".reverse,":".reverse).reverse.gsub(".paf",""))
-                        end
-                    end
-                turnos
             
-            end
 
         end
     end

@@ -123,7 +123,9 @@ module Polycon
             
               puts "Los turnos para el profesional #{professional} #{hay_fecha}"
               todo.each do |t|
-                puts t
+                puts t.name
+                puts t.surname
+                puts t.phone
               end
             end
             rescue => e
@@ -146,6 +148,7 @@ module Polycon
 
         def call(old_date:, new_date:, professional:)
           begin
+            #an_appointment=Polycon::Models::Appointment.reschedule(old_date,new_date,professional)
             Polycon::Models::Appointment.reschedule(old_date,new_date,professional)
             puts "Se reagendo el turno exitosamente"
           rescue => exception
@@ -174,7 +177,8 @@ module Polycon
 
         def call(date:, professional:, **options)
           begin
-            Polycon::Models::Appointment.edit(date,professional,options)
+            an_appointment=Polycon::Models::Appointment.new(date,professional)
+            an_appointment.edit(options)
             puts "Se modifico el turno exitosamente"
           rescue => exception
             puts exception.message
