@@ -1,0 +1,32 @@
+require 'erb'
+<!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <title> Turnos </title>
+                <meta charset="UTF-8">
+              </head>
+              <body>
+                <table style="width:30%" border=1>
+                  <tr>
+                    <th> Hora/Dia</th>
+                  
+                    <th><%= day %></th>
+                 
+                  </tr>
+                  <%- schedule.each do |hs| -%>
+                  <tr>
+                 
+                    <td><%= hs %></td>
+                    <td >
+                    <%- for paciente in appointments.find_all{ |app| app.date.split(" ")[1]==hs} do -%>
+                        
+                   
+                            <div><%=paciente.surname  %> 
+                            <%= paciente.name %> (<%= paciente.professional %>)</div> 
+                     <%- end -%>
+                     </td>
+                     </tr>
+                <%- end -%>
+                </table>
+              </body>
+            </html>
