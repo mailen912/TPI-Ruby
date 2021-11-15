@@ -1,0 +1,26 @@
+<h1>SIii</h1>
+<h1>Listing professionals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Professional</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @professionals.each do |professional| %>
+      <tr>
+        <td><%= professional.name %></td>
+        <td><%= link_to "Eliminar",professional, method: :delete %></td>
+        
+       
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
