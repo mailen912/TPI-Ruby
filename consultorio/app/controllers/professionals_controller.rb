@@ -1,8 +1,6 @@
 class ProfessionalsController < ApplicationController
     before_action :find_professional, only:[:show, :edit, :update, :destroy]
 
-    def show
-    end
 
     def index 
         @professionals=Professional.all
@@ -15,8 +13,11 @@ class ProfessionalsController < ApplicationController
 
     
     def create #arreglar
-        @professional=Professional.create(name: params[:professional][:name])
-        render json: @professional
+        if @professional=Professional.create(name: params[:professional][:name]).valid?
+            redirect_to( root_path)
+        else
+            redirect_back(fallback_location: root_path)
+        end
     end
 
     def edit #rename
@@ -34,12 +35,15 @@ class ProfessionalsController < ApplicationController
 
     end
     def destroy
-        puts @professional.id
-        puts @professional.name
-        @professional.destroy
+        if not Appointment.where("professional_id==#{@professional.id}").first
+            @professional.destroy
+        end
         redirect_to( root_path)
     end
 
+    def show
+        @appointments= Appointment.where("professional_id==#{@professional.id}")
+    end
     def find_professional
         @professional=Professional.find(params[:id])
     end

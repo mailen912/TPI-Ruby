@@ -1,0 +1,23 @@
+<%= form_with(model: @appointment, local:true) do |form|%>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+    <div>
+        <%= form.label :surname %>
+        <%= form.text_field :surname %>
+    </div>
+    <div>
+        <%= form.label :phone %>
+        <%= form.text_field :phone %>
+    </div>
+    <div>
+        <%= form.label :notes %>
+        <%= form.text_field :notes %>
+    </div>
+    
+    <div>
+        <%= form.submit %>
+    </div>
+
+    <% end %>

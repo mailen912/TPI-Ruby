@@ -14,9 +14,10 @@
       <tr>
         <td><%= professional.name %></td>
         
-        <td><%= button_to "ELiminar", professional, :method => "delete" %></td>
+        <td><%= button_to "ELiminar", professional_path(professional), :method => "delete",data: {confirm: "Estas seguro?"} %></td>
        
-        <%= button_to "Editar",edit_professional_path(professional), :method => "get" %>
+        <td><%= button_to "Editar",edit_professional_path(professional), :method => "get" %><td>
+        <td><%= button_to "Ver turnos",professional_path(professional), :method => "get" %><td>
       </tr>
     <% end %>
   </tbody>

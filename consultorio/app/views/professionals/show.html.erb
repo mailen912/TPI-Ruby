@@ -1,0 +1,31 @@
+<h1>SIii</h1>
+<h1>Listing Appointments</h1>
+<%= @professional.name%>
+<table border=1>
+  <thead>
+    <tr>
+      <th>Fecha y hora</th>
+      <th>Nombre del paciente</th>
+      <th>Apellido del paciente</th>
+      <th>Notas</th>
+      
+ 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+      <tr>
+        <td><%= appointment.date %></td>
+        <td><%= appointment.name %></td>
+        <td><%= appointment.surname %></td>
+        <td><%= appointment.notes %></td>
+        <td><%= button_to "Cancelar", appointment_path(appointment), :method => "delete",data: {confirm: "Estas seguro?"} %></td>
+       
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= button_to "Agregar",new_appointment_path(@professional),  :method => "get" %>
+<br>
