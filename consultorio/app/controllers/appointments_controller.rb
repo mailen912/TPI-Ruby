@@ -1,36 +1,62 @@
-require 'date'
 class AppointmentsController < ApplicationController
-  before_action :find_professional, only:[:show, :edit, :update, :destroy]
+  before_action :set_professional
+  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+
+  # GET /appointments
+  def index
+    @appointments = @professional.appointments.all
+  end
+
+  # GET /appointments/1
   def show
   end
 
-  def new 
-    puts ("acaaaaaa aaaaaa")
-    puts(params[:id])
-    @appointment=Appointment.new
+  # GET /appointments/new
+  def new
+    @appointment = @professional.appointments.new
   end
 
+  # GET /appointments/1/edit
+  def edit
+  end
 
+  # POST /appointments
+  def create
+    @appointment = @professional.appointments.new(appointment_params)
 
-  def create #arreglar
-    date=DateTime.parse("2021-01-11 11:00")
-    Appointment.create(date:date,name:"Adrian",surname:"Perez",phone:"1232123", professional_id:1)
-    if @appointment=Appointment.create(date: date, name: params[:professional][:name],surname: params[:professional][:surname],phone: params[:professional][:phone],professional_id:1).valid?
-        redirect_to( root_path)
+    if @appointment.save
+      redirect_to @appointment, notice: 'Appointment was successfully created.'
     else
-        redirect_back(fallback_location: root_path)
+      render :new
     end
   end
 
-
-  def destroy
-    @appointment.destroy
-    redirect_back(fallback_location: root_path)
+  # PATCH/PUT /appointments/1
+  def update
+    if @appointment.update(appointment_params)
+      redirect_to @appointment, notice: 'Appointment was successfully updated.'
+    else
+      render :edit
+    end
   end
 
+  # DELETE /appointments/1
+  def destroy
+    @appointment.destroy
+    redirect_to appointments_url, notice: 'Appointment was successfully destroyed.'
+  end
 
-  def find_professional
-    @appointment=Appointment.find(params[:id])
-  
-end
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_professional
+      @professional = Professional.find(params[:professional_id])
+    end
+    def set_appointment
+      @appointment = Appointment.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def appointment_params
+      params.require(:appointment).permit(:date, :name, :surname, :phone, :notes)
+    end
 end

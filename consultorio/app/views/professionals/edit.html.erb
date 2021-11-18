@@ -1,11 +1,6 @@
-<%= form_with(model: @professional, local:true) do |form|%>
-    <div>
-        <%= form.label :name %>
-        <%= form.text_field :name %>
-    </div>
+<h1>Editing Professional</h1>
 
-    <div>
-        <%= form.submit %>
-    </div>
+<%= render 'form', professional: @professional %>
 
-    <% end %>
+<%= link_to 'Show', @professional %> |
+<%= link_to 'Back', professionals_path %>

@@ -6,7 +6,7 @@ class CreateAppointments < ActiveRecord::Migration[6.1]
       t.belongs_to :professional, null: false, foreign_key: true
       t.string :surname, null:false
       t.string :phone, null:false
-      t.string :notes
+      t.text :notes
 
       t.timestamps
     end
