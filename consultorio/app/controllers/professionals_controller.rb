@@ -41,13 +41,12 @@ class ProfessionalsController < ApplicationController
 
   # DELETE /professionals/1
   def destroy
-    if @profesional.has_appointments
-      render :index
-      puts "sii tiene"
-    else
-      puts "no tiene"
+    begin
       @professional.destroy
       redirect_to professionals_url, notice: 'Professional was successfully destroyed.'
+    rescue
+      #tengo que avisar que no puede
+      redirect_to professionals_url, notice: 'Professional has appointments'
     end
   end
 
