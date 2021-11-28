@@ -19798,3 +19798,283 @@ Processing by ProfessionalsController#index as HTML
 Completed 200 OK in 46ms (Views: 31.9ms | ActiveRecord: 0.5ms | Allocations: 5674)
 
 
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-11-28 18:39:15 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 84ms (ActiveRecord: 2.5ms | Allocations: 9537)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-28 18:39:15 -0300
+Processing by ProfessionalsController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 309)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-11-28 18:39:15 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 5.8ms | Allocations: 535)
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 37.1ms | Allocations: 2811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.5ms | Allocations: 7975)
+Completed 200 OK in 132ms (Views: 125.0ms | ActiveRecord: 0.0ms | Allocations: 10652)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-11-28 18:41:43 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 108)
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 4010)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.0ms | Allocations: 4613)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2021-11-28 18:41:49 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 488ms (ActiveRecord: 0.4ms | Allocations: 6103)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-28 18:41:49 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (1.8ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 3318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 87.4ms | Allocations: 6335)
+Completed 200 OK in 135ms (Views: 95.3ms | ActiveRecord: 3.8ms | Allocations: 9355)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 18:41:52 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:18
+  Rendered appointments/index.html.erb within layouts/application (Duration: 44.3ms | Allocations: 6377)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 57.0ms | Allocations: 9292)
+Completed 200 OK in 112ms (Views: 62.7ms | ActiveRecord: 3.0ms | Allocations: 16152)
+
+
+Started GET "/professionals/2/appointments/new" for 127.0.0.1 at 2021-11-28 18:42:01 -0300
+Processing by AppointmentsController#new as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 510.1ms | Allocations: 3831)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 516.9ms | Allocations: 4177)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 540.8ms | Allocations: 7197)
+Completed 200 OK in 571ms (Views: 542.2ms | ActiveRecord: 0.7ms | Allocations: 10150)
+
+
+Started POST "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 18:42:29 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"25", "date(4i)"=>"21", "date(5i)"=>"42", "name"=>"Marta", "surname"=>"Rodriguez", "phone"=>"4432312", "notes"=>""}, "commit"=>"Create Appointment", "professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:55:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 21:42:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:55:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 12.0ms | Allocations: 3121)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 3231)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 6170)
+Completed 200 OK in 83ms (Views: 24.8ms | ActiveRecord: 1.3ms | Allocations: 13930)
+
+
+Started POST "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 18:45:17 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"25", "date(4i)"=>"21", "date(5i)"=>"42", "name"=>"Marta", "surname"=>"Rodriguez", "phone"=>"4432312", "notes"=>""}, "commit"=>"Create Appointment", "professional_id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:55:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 21:42:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:55:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 13.0ms | Allocations: 3223)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 3334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 6288)
+Completed 200 OK in 165ms (Views: 28.3ms | ActiveRecord: 7.6ms | Allocations: 27028)
+
+
+Started POST "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 18:45:20 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"25", "date(4i)"=>"21", "date(5i)"=>"42", "name"=>"Marta", "surname"=>"Rodriguez", "phone"=>"4432312", "notes"=>""}, "commit"=>"Create Appointment", "professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:55:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 21:42:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:55:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 17.1ms | Allocations: 3110)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 3220)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 6160)
+Completed 200 OK in 96ms (Views: 32.2ms | ActiveRecord: 1.0ms | Allocations: 13616)
+
+
+Started POST "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 18:46:41 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"25", "date(4i)"=>"21", "date(5i)"=>"42", "name"=>"Marta", "surname"=>"Rodriguez", "phone"=>"4432312", "notes"=>""}, "commit"=>"Create Appointment", "professional_id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:56:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.9ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 21:42:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:56:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 11.8ms | Allocations: 3223)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 6293)
+Completed 200 OK in 164ms (Views: 25.4ms | ActiveRecord: 7.0ms | Allocations: 26999)
+
+
+Started POST "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 18:47:31 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"25", "date(4i)"=>"21", "date(5i)"=>"42", "name"=>"Marta", "surname"=>"Rodriguez", "phone"=>"4432312", "notes"=>""}, "commit"=>"Create Appointment", "professional_id"=>"2"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:56:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 21:42:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:56:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 10.6ms | Allocations: 3074)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 11.4ms | Allocations: 3185)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 6138)
+Completed 200 OK in 132ms (Views: 23.8ms | ActiveRecord: 8.4ms | Allocations: 24740)
+
+
+Started POST "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 18:47:41 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date(1i)"=>"2021", "date(2i)"=>"11", "date(3i)"=>"25", "date(4i)"=>"11", "date(5i)"=>"00", "name"=>"Marta", "surname"=>"Rodriguez", "phone"=>"4432312", "notes"=>""}, "commit"=>"Create Appointment", "professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:56:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 11:00:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:56:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:27:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 16.4ms | Allocations: 2961)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 19.0ms | Allocations: 3071)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 6013)
+Completed 200 OK in 81ms (Views: 36.9ms | ActiveRecord: 1.1ms | Allocations: 11422)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2021-11-28 19:23:39 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 45ms (ActiveRecord: 14.6ms | Allocations: 2936)
+
+
+Started GET "/" for 127.0.0.1 at 2021-11-28 19:23:39 -0300
+Processing by ProfessionalsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 299)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2021-11-28 19:23:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 116)
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 4040)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.0ms | Allocations: 4760)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRoleToUser (20211128222828)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at" FROM "users"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "role" varchar NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "users" ("id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at")
+                     SELECT "id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddRoleToUser (20211128222828)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (685.3ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer DEFAULT 0 NOT NULL[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20211128222828"]]
+  [1m[36mTRANSACTION (5437.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]

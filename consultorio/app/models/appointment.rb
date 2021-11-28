@@ -6,7 +6,7 @@ class Appointment < ApplicationRecord
   validates :surname, presence:true
   validates :phone, presence:true
   validates :notes, presence:false, length: { maximum: 50 }
-  validate :valid_day?, :is_sunday?, :valid_time?,  :valid_uniqueness?, :valid_date?
+  validate  :is_sunday?, :valid_time?,  :valid_uniqueness?, 
 
   def valid_day?
     begin
@@ -41,10 +41,11 @@ class Appointment < ApplicationRecord
     end
   end 
 
-  def valid_date?
+  def valid_date?#no funciona
     begin
+      puts "ACA"
       puts (self.date)
-      self.date.strptime("%Y-%m-%d %H:%M")
+      puts (self.date.strptime("%Y-%m-%d %H:%M:%S"))
     rescue => exception
       errors.add :date, "El formato de la fecha es invalido"
     end
