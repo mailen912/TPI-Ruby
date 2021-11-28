@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :users
   root to:"professionals#index" #ruta de inicio
   resources :professionals do
       resources :appointments do

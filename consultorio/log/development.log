@@ -19416,3 +19416,87 @@ Processing by ProfessionalsController#index as HTML
 Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.2ms | Allocations: 4542)
 
 
+Started GET "/" for 127.0.0.1 at 2021-11-28 17:47:37 -0300
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfessionalsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 37.9ms | Allocations: 3831)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/osboxes/TPI-Ruby/consultorio/public/packs
+[Webpacker] Hash: fb826fcbe75e5d05f9ce
+Version: webpack 4.46.0
+Time: 3543ms
+Built at: 11/28/2021 5:47:49 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9b74101cd39c7912883e.js    125 KiB  application  [emitted] [immutable]  application
+js/application-9b74101cd39c7912883e.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9b74101cd39c7912883e.js js/application-9b74101cd39c7912883e.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 536 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 12440.4ms | Allocations: 19706)
+Completed 200 OK in 12526ms (Views: 12459.3ms | ActiveRecord: 1.7ms | Allocations: 27643)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-11-28 17:47:52 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mProfessional Load (0.5ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:59:in `set_professional'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:18
+  Rendered appointments/index.html.erb within layouts/application (Duration: 63.8ms | Allocations: 7043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 79.9ms | Allocations: 9916)
+Completed 200 OK in 223ms (Views: 84.5ms | ActiveRecord: 2.8ms | Allocations: 18854)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-11-28 17:48:01 -0300
+Processing by ProfessionalsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1192)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 4140)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.2ms | Allocations: 4535)
+
+
+Started DELETE "/professionals/2" for 127.0.0.1 at 2021-11-28 17:48:05 -0300
+Processing by ProfessionalsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/professionals_controller.rb:56:in `set_professional'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/professionals_controller.rb:45:in `destroy'
+  [1m[36mProfessional Destroy (4.8ms)[0m  [1m[31mDELETE FROM "professionals" WHERE "professionals"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/professionals_controller.rb:45:in `destroy'
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/professionals_controller.rb:45:in `destroy'
+Redirected to http://127.0.0.1:3000/professionals
+Completed 302 Found in 39ms (ActiveRecord: 11.3ms | Allocations: 4901)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-11-28 17:48:05 -0300
+Processing by ProfessionalsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 1184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4131)
+Completed 200 OK in 24ms (Views: 23.1ms | ActiveRecord: 0.2ms | Allocations: 4533)
+
+
