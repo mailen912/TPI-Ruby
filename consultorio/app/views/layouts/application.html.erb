@@ -11,7 +11,12 @@
 </head>
 
 <body>
+<% if user_signed_in? %>
 
+<p>Hola <%= current_user.email %>
+<%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete %>
+</p>
+<% end %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <%= yield %>
