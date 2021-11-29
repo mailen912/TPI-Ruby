@@ -6,7 +6,7 @@ class Appointment < ApplicationRecord
   validates :surname, presence:true
   validates :phone, presence:true
   validates :notes, presence:false, length: { maximum: 50 }
-  validate  :is_sunday?, :valid_time?,  :valid_uniqueness?, 
+  validate  :is_sunday?, :valid_time?,  :valid_uniqueness?
 
   def valid_day?
     begin

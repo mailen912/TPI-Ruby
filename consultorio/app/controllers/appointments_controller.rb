@@ -1,6 +1,8 @@
 class AppointmentsController < ApplicationController
-  before_action :set_professional
-  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource :professional
+  load_and_authorize_resource :appointment, through: :professional
+  #before_action :set_professional
+  #before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   # GET /appointments
   def index

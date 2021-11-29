@@ -14,9 +14,13 @@
     <% @professionals.each do |professional| %>
       <tr>
         <td><%= professional.name %></td>
-        <td><%= link_to 'Show', professional %></td>
-        <td><%= link_to 'Edit', edit_professional_path(professional) %></td>
-        <td><%= link_to 'Destroy', professional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :read, professional %>
+          <td><%= link_to 'Show', professional %></td>
+        <%end%>
+        <% if can? :write, professional %>
+          <td><%= link_to 'Edit', edit_professional_path(professional) %></td>
+          <td><%= link_to 'Destroy', professional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
         <td><%= link_to 'Appointments', professional_appointments_path(professional) %></td>
       </tr>
     <% end %>
@@ -24,5 +28,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Professional', new_professional_path %>
+<% if can? :write, current_user %>
+  <%= link_to 'New Professional', new_professional_path %>
+<% end %>
