@@ -7,9 +7,9 @@ class Ability
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
-      if user.administracion?
+      if user.administrator?
         can :manage, :all
-      elsif user.asistencia?
+      elsif user.assistance?
         can :manage, Appointment
         can :read, Professional
       else

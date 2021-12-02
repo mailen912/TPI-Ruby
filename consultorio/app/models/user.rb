@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
   validates :role, presence: true
+  validates :email, presence: true, uniqueness: true
+  validates :password, presence: true, uniqueness: false
 
-  enum role: [:consulta, :asistencia, :administracion]
+  enum role: [:query, :assistance, :administrator]
 end

@@ -1,0 +1,19 @@
+<%= form_with url: "/grids", method: :post do |form| %>
+    
+  
+    <div class="field">
+      <%= form.label :day %><br>
+      <%= form.date_field :day %>
+    </div>
+    <div class="field">
+      <%= form.label :professional %><br>
+      <%= form.collection_select :professional_id, Professional.order(:name), :id, :name %>
+    </div>
+    <div class="field">
+      <%= form.label :grid  %>
+      <%= form.collection_radio_buttons :type,  ['Daily', 'Weekly'],:to_s, :to_s%>
+    </div>
+    <div class="actions">
+      <%= form.submit "dia"%>
+    </div>
+  <% end %>
