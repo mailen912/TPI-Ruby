@@ -28,7 +28,7 @@
 </table>
 
 <br>
-<% if can? :write, current_user %>
+<% if can? :write, Appointment %>
   <%= link_to 'New Appointment', new_professional_appointment_path(@professional) %>
   <td><%= link_to 'Destroy all', cancelall_professional_appointments_path(@professional), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>

@@ -27434,3 +27434,1652 @@ Processing by ProfessionalsController#index as HTML
 Completed 200 OK in 43ms (Views: 28.3ms | ActiveRecord: 0.6ms | Allocations: 7066)
 
 
+Started GET "/" for 127.0.0.1 at 2021-12-02 19:13:46 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 55.2ms | Allocations: 4163)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 120.9ms | Allocations: 9308)
+Completed 200 OK in 256ms (Views: 130.4ms | ActiveRecord: 8.8ms | Allocations: 19950)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-02 19:13:55 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 31.4ms | Allocations: 8736)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 11696)
+Completed 200 OK in 68ms (Views: 52.3ms | ActiveRecord: 0.7ms | Allocations: 14336)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-02 19:14:00 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-24", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.3ms | Allocations: 1437)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 19:14:00 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 4824)
+Completed 200 OK in 38ms (Views: 26.7ms | ActiveRecord: 0.4ms | Allocations: 6750)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-02 19:16:42 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 26.6ms | Allocations: 7993)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 10929)
+Completed 200 OK in 86ms (Views: 37.6ms | ActiveRecord: 4.6ms | Allocations: 18229)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-02 19:16:49 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-22", "professional_id"=>"10", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 1403)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-02 19:16:49 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 4884)
+Completed 200 OK in 40ms (Views: 24.0ms | ActiveRecord: 0.5ms | Allocations: 7060)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 60], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" ORDER BY "appointments"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2021-12-03 10:05:01 -0300
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProfessionalsController#index as HTML
+Completed 401 Unauthorized in 34ms (ActiveRecord: 0.0ms | Allocations: 1672)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2021-12-03 10:05:01 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 16.1ms | Allocations: 535)
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 202.2ms | Allocations: 2820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 384.3ms | Allocations: 7945)
+Completed 200 OK in 596ms (Views: 546.7ms | ActiveRecord: 1.3ms | Allocations: 15050)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-12-03 10:05:09 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 571ms (ActiveRecord: 13.2ms | Allocations: 4594)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 10:05:10 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (17.1ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 59.6ms | Allocations: 4021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 74.8ms | Allocations: 7028)
+Completed 200 OK in 155ms (Views: 57.4ms | ActiveRecord: 21.8ms | Allocations: 10615)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 10:05:15 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (21.1ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 165.3ms | Allocations: 6439)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 185.0ms | Allocations: 9372)
+Completed 200 OK in 222ms (Views: 170.2ms | ActiveRecord: 21.3ms | Allocations: 11917)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 10:05:21 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-24", "professional_id"=>"8", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 15ms (ActiveRecord: 0.3ms | Allocations: 1423)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 10:05:21 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 1818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 4820)
+Completed 200 OK in 46ms (Views: 30.8ms | ActiveRecord: 0.5ms | Allocations: 6746)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 10:06:33 -0300
+  
+SyntaxError (/home/osboxes/TPI-Ruby/consultorio/app/controllers/grids_controller.rb:30: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/grids_controller.rb:30: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/grids_controller.rb:30: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/grids_controller.rb:30: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 127.0.0.1 at 2021-12-03 10:06:52 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 3640)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 6782)
+Completed 200 OK in 92ms (Views: 32.5ms | ActiveRecord: 9.9ms | Allocations: 15559)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 10:06:54 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.5ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 25.2ms | Allocations: 5652)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 8583)
+Completed 200 OK in 61ms (Views: 44.1ms | ActiveRecord: 0.8ms | Allocations: 10464)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 10:06:57 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 5600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.0ms | Allocations: 9116)
+Completed 200 OK in 60ms (Views: 46.8ms | ActiveRecord: 0.7ms | Allocations: 10586)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 10:07:02 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-24", "professional_id"=>"8", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.5ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 25ms (ActiveRecord: 0.7ms | Allocations: 3100)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 10:07:02 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 1804)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 4798)
+Completed 200 OK in 41ms (Views: 27.2ms | ActiveRecord: 0.6ms | Allocations: 6717)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAppointment Load (1.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date.strftime('%Y-%d-%m')==2021-11-25) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAppointment Load (0.9ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date.strftime('%Y-%d-%m')='2021-11-25') /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAppointment Load (0.9ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date.strftime('%Y-%d-%m')='2021-11-25') /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAppointment Load (1.0ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (date.to_date='2021-11-25') /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 10:41:29 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (100.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 234.1ms | Allocations: 6643)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 275.9ms | Allocations: 9557)
+Completed 200 OK in 456ms (Views: 177.3ms | ActiveRecord: 103.6ms | Allocations: 17312)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2021-12-03 10:41:32 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 42ms (ActiveRecord: 0.4ms | Allocations: 2304)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 10:41:32 -0300
+Processing by ProfessionalsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 240)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2021-12-03 10:41:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 118)
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 4050)
+Completed 200 OK in 19ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 4784)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-12-03 10:41:40 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"asistencia@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "asistencia@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 356ms (ActiveRecord: 0.5ms | Allocations: 2281)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 10:41:40 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1559)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 4575)
+Completed 200 OK in 37ms (Views: 22.9ms | ActiveRecord: 0.6ms | Allocations: 6531)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 10:41:46 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 1803)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 4951)
+Completed 200 OK in 65ms (Views: 35.7ms | ActiveRecord: 0.8ms | Allocations: 8723)
+
+
+Started GET "/professionals/2/appointments/25/edit" for 127.0.0.1 at 2021-12-03 10:41:47 -0300
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"professional_id"=>"2", "id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 25], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 53.2ms | Allocations: 3744)
+  Rendered appointments/edit.html.erb within layouts/application (Duration: 77.2ms | Allocations: 4769)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 94.4ms | Allocations: 7778)
+Completed 200 OK in 131ms (Views: 95.7ms | ActiveRecord: 0.9ms | Allocations: 12071)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 10:41:49 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1779)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 4773)
+Completed 200 OK in 51ms (Views: 27.9ms | ActiveRecord: 1.0ms | Allocations: 8100)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 11:04:49 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 3031)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 6023)
+Completed 200 OK in 76ms (Views: 26.1ms | ActiveRecord: 1.6ms | Allocations: 14661)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 11:04:55 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 45.3ms | Allocations: 5647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | Allocations: 8644)
+Completed 200 OK in 96ms (Views: 60.5ms | ActiveRecord: 1.0ms | Allocations: 13460)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 11:05:24 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 5454)
+Completed 200 OK in 51ms (Views: 29.0ms | ActiveRecord: 0.9ms | Allocations: 9576)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2021-12-03 11:05:33 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 1940)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 11:05:33 -0300
+Processing by ProfessionalsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2021-12-03 11:05:33 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 492)
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1857)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 4898)
+Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 6556)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-12-03 11:05:41 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"consulta1@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "consulta1@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 381ms (ActiveRecord: 0.5ms | Allocations: 3229)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 11:05:41 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1856)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 4872)
+Completed 200 OK in 45ms (Views: 33.4ms | ActiveRecord: 0.6ms | Allocations: 7374)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 11:05:43 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 1562)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 5028)
+Completed 200 OK in 64ms (Views: 30.9ms | ActiveRecord: 0.8ms | Allocations: 8359)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 11:05:45 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 5092)
+Completed 200 OK in 55ms (Views: 37.0ms | ActiveRecord: 0.7ms | Allocations: 7023)
+
+
+Started DELETE "/auth/sign_out" for 127.0.0.1 at 2021-12-03 11:05:47 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.3ms | Allocations: 1693)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 11:05:47 -0300
+Processing by ProfessionalsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 229)
+
+
+Started GET "/auth/sign_in" for 127.0.0.1 at 2021-12-03 11:05:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 108)
+  Rendered /home/osboxes/.rbenv/versions/2.7.4/lib/ruby/gems/2.7.0/gems/devise-4.8.0/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 7.2ms | Allocations: 978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 4020)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 4615)
+
+
+Started POST "/auth/sign_in" for 127.0.0.1 at 2021-12-03 11:05:56 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"asistencia@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "asistencia@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 361ms (ActiveRecord: 0.3ms | Allocations: 2227)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 11:05:56 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1506)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 4516)
+Completed 200 OK in 48ms (Views: 29.6ms | ActiveRecord: 0.6ms | Allocations: 6468)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 11:05:59 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1922)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 4931)
+Completed 200 OK in 67ms (Views: 34.6ms | ActiveRecord: 0.9ms | Allocations: 8762)
+
+
+Started GET "/professionals/2/appointments/new" for 127.0.0.1 at 2021-12-03 11:06:01 -0300
+Processing by AppointmentsController#new as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 9.7ms | Allocations: 3252)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 105.6ms | Allocations: 3696)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 116.3ms | Allocations: 6727)
+Completed 200 OK in 151ms (Views: 117.7ms | ActiveRecord: 0.5ms | Allocations: 10620)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 11:06:03 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (2.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 1850)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 5459)
+Completed 200 OK in 82ms (Views: 31.4ms | ActiveRecord: 2.9ms | Allocations: 8790)
+
+
+Started GET "/professionals/2/appointments/23/edit" for 127.0.0.1 at 2021-12-03 11:06:12 -0300
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"professional_id"=>"2", "id"=>"23"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 23], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 10.2ms | Allocations: 3247)
+  Rendered appointments/edit.html.erb within layouts/application (Duration: 13.5ms | Allocations: 3726)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 6735)
+Completed 200 OK in 72ms (Views: 35.4ms | ActiveRecord: 0.8ms | Allocations: 11520)
+
+
+Started GET "/professionals/2/appointments/23/edit" for 127.0.0.1 at 2021-12-03 11:06:42 -0300
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"professional_id"=>"2", "id"=>"23"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 23], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 13.3ms | Allocations: 2710)
+  Rendered appointments/edit.html.erb within layouts/application (Duration: 15.6ms | Allocations: 3047)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 3111)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.6ms | Allocations: 8025)
+
+
+  
+ActionView::Template::Error (undefined method `datetime' for #<ActionView::Helpers::FormBuilder:0x00007f57ac7613c0>
+Did you mean?  datetime_field):
+    13: 
+    14:   <div class="field">
+    15:     <%= form.label :date %>
+    16:     <%= form.datetime :date %>
+    17:   </div>
+    18: 
+    19:   <div class="field">
+  
+app/views/appointments/_form.html.erb:16
+app/views/appointments/_form.html.erb:1
+app/views/appointments/edit.html.erb:3
+Started GET "/professionals/2/appointments/23/edit" for 127.0.0.1 at 2021-12-03 11:07:03 -0300
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"professional_id"=>"2", "id"=>"23"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 23], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 66.9ms | Allocations: 4203)
+  Rendered appointments/edit.html.erb within layouts/application (Duration: 70.6ms | Allocations: 4624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 89.0ms | Allocations: 7803)
+Completed 200 OK in 128ms (Views: 92.9ms | ActiveRecord: 0.7ms | Allocations: 12732)
+
+
+Started PATCH "/professionals/2/appointments/23" for 127.0.0.1 at 2021-12-03 11:07:11 -0300
+Processing by AppointmentsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date"=>"2021-11-23T11:30:00", "name"=>"Marta", "surname"=>"Lopez", "phone"=>"11112345", "notes"=>"actual"}, "commit"=>"Update Appointment", "professional_id"=>"2", "id"=>"23"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 23], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:49:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-23 11:30:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:49:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:38:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 9.3ms | Allocations: 1573)
+  Rendered appointments/edit.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1748)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 4688)
+Completed 200 OK in 101ms (Views: 26.4ms | ActiveRecord: 1.9ms | Allocations: 14285)
+
+
+Started GET "/professionals/2/appointments/23" for 127.0.0.1 at 2021-12-03 11:16:54 -0300
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#show as HTML
+  Parameters: {"professional_id"=>"2", "id"=>"23"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (1.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 23], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/show.html.erb within layouts/application
+  Rendered appointments/show.html.erb within layouts/application (Duration: 18.5ms | Allocations: 513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 5600)
+Completed 200 OK in 312ms (Views: 47.3ms | ActiveRecord: 11.7ms | Allocations: 28149)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 11:16:56 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 20.4ms | Allocations: 3149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 6152)
+Completed 200 OK in 67ms (Views: 34.3ms | ActiveRecord: 0.9ms | Allocations: 9687)
+
+
+Started GET "/professionals/2/appointments/25/edit" for 127.0.0.1 at 2021-12-03 11:16:58 -0300
+Processing by AppointmentsController#edit as HTML
+  Parameters: {"professional_id"=>"2", "id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.9ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 25], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 16.9ms | Allocations: 4221)
+  Rendered appointments/edit.html.erb within layouts/application (Duration: 19.4ms | Allocations: 4647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 7656)
+Completed 200 OK in 68ms (Views: 29.9ms | ActiveRecord: 1.5ms | Allocations: 12511)
+
+
+Started PATCH "/professionals/2/appointments/25" for 127.0.0.1 at 2021-12-03 11:17:01 -0300
+Processing by AppointmentsController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date"=>"2021-11-25T10:00:00", "name"=>"Marta", "surname"=>"Rodriguez", "phone"=>"4432312", "notes"=>"actual"}, "commit"=>"Update Appointment", "professional_id"=>"2", "id"=>"25"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 2], ["id", 25], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:51:in `valid_uniqueness?'
+  [1m[36mAppointment Load (1.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 10:00:00"], ["professional_id", 2], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:51:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:38:in `update'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/edit.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 7.8ms | Allocations: 1570)
+  Rendered appointments/edit.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1742)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 4674)
+Completed 200 OK in 108ms (Views: 22.7ms | ActiveRecord: 2.3ms | Allocations: 14415)
+
+
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25') /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id=2) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id=2) /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id=2) ORDER BY "appointments"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id=2) ORDER BY "appointments"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 15:51:23 -0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 44.6ms | Allocations: 7097)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 109.4ms | Allocations: 12143)
+Completed 200 OK in 260ms (Views: 111.4ms | ActiveRecord: 8.4ms | Allocations: 29502)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 15:51:33 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.5ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 13.7ms | Allocations: 1887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 4889)
+Completed 200 OK in 49ms (Views: 31.6ms | ActiveRecord: 0.7ms | Allocations: 8107)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:51:35 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 86.4ms | Allocations: 8601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 99.8ms | Allocations: 11534)
+Completed 200 OK in 128ms (Views: 102.6ms | ActiveRecord: 0.6ms | Allocations: 13984)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 15:51:38 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 18ms (ActiveRecord: 0.2ms | Allocations: 1751)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 15:51:38 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 1516)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 4516)
+Completed 200 OK in 48ms (Views: 32.0ms | ActiveRecord: 0.4ms | Allocations: 6463)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:52:15 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 18.0ms | Allocations: 5600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.9ms | Allocations: 9155)
+Completed 200 OK in 66ms (Views: 54.0ms | ActiveRecord: 0.5ms | Allocations: 10647)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 15:52:20 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-30", "professional_id"=>"12", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-12-30' and professional_id='12')[0m
+  ↳ app/models/grid.rb:30:in `find_all'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 30ms (ActiveRecord: 1.0ms | Allocations: 2848)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 15:52:20 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4501)
+Completed 200 OK in 42ms (Views: 24.8ms | ActiveRecord: 0.4ms | Allocations: 6458)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:53:03 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.9ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 21.3ms | Allocations: 5601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 8523)
+Completed 200 OK in 46ms (Views: 32.6ms | ActiveRecord: 1.2ms | Allocations: 9993)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 15:53:05 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"", "professional_id"=>"2", "type"=>"", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 13ms (ActiveRecord: 0.2ms | Allocations: 1724)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 15:53:05 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 10.6ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 4505)
+Completed 200 OK in 42ms (Views: 26.3ms | ActiveRecord: 0.5ms | Allocations: 6452)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 15:53:10 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 1857)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 5454)
+Completed 200 OK in 54ms (Views: 29.2ms | ActiveRecord: 0.8ms | Allocations: 8788)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 15:53:19 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 4499)
+Completed 200 OK in 46ms (Views: 29.0ms | ActiveRecord: 0.7ms | Allocations: 6449)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:53:21 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 5600)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.4ms | Allocations: 8522)
+Completed 200 OK in 49ms (Views: 36.3ms | ActiveRecord: 0.6ms | Allocations: 9992)
+
+
+Started GET "/professionals/2/appointments" for 127.0.0.1 at 2021-12-03 15:53:44 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 2]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1842)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 4840)
+Completed 200 OK in 55ms (Views: 27.5ms | ActiveRecord: 1.1ms | Allocations: 8177)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 15:53:48 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 27.8ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.9ms | Allocations: 4510)
+Completed 200 OK in 63ms (Views: 43.0ms | ActiveRecord: 0.5ms | Allocations: 6461)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:53:49 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 5601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 8523)
+Completed 200 OK in 43ms (Views: 29.3ms | ActiveRecord: 0.5ms | Allocations: 9993)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 15:53:59 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id='2')[0m
+  ↳ app/models/grid.rb:30:in `find_all'
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.9ms | Allocations: 3994)
+
+
+  
+NoMethodError (undefined method `strftime' for #<Grid:0x00007f2a9c076ef8 @day="2021-11-25", @professional="2">):
+  
+app/models/grid.rb:30:in `block in export_daily'
+app/models/grid.rb:30:in `find_all'
+app/models/grid.rb:30:in `export_daily'
+app/controllers/grids_controller.rb:24:in `to_export'
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:54:22 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 32.8ms | Allocations: 8081)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.2ms | Allocations: 11163)
+Completed 200 OK in 113ms (Views: 49.7ms | ActiveRecord: 6.0ms | Allocations: 18836)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 15:54:24 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.6ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id='2')[0m
+  ↳ app/models/grid.rb:30:in `find_all'
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:33:in `block in export_daily'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 64ms (ActiveRecord: 3.1ms | Allocations: 8578)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 15:54:24 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 1617)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 4617)
+Completed 200 OK in 42ms (Views: 24.9ms | ActiveRecord: 0.6ms | Allocations: 6841)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:55:40 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 25.0ms | Allocations: 7994)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 10940)
+Completed 200 OK in 85ms (Views: 40.6ms | ActiveRecord: 3.8ms | Allocations: 18302)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 15:55:47 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-25", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.6ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-12-25' and professional_id='2')[0m
+  ↳ app/models/grid.rb:30:in `find_all'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 25ms (ActiveRecord: 1.3ms | Allocations: 3439)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 15:55:47 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 1607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 4607)
+Completed 200 OK in 44ms (Views: 29.4ms | ActiveRecord: 0.7ms | Allocations: 6816)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 15:56:09 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.5ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 22.2ms | Allocations: 5601)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.4ms | Allocations: 9138)
+Completed 200 OK in 58ms (Views: 44.0ms | ActiveRecord: 0.8ms | Allocations: 10609)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 15:56:21 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+  [1m[36mAppointment Load (0.7ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id='2')[0m
+  ↳ app/models/grid.rb:30:in `find_all'
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:33:in `block in export_daily'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 57ms (ActiveRecord: 3.2ms | Allocations: 7823)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 15:56:21 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 4499)
+Completed 200 OK in 36ms (Views: 23.9ms | ActiveRecord: 0.4ms | Allocations: 6446)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:02:19 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 25.7ms | Allocations: 7695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.8ms | Allocations: 10641)
+Completed 200 OK in 74ms (Views: 37.6ms | ActiveRecord: 1.6ms | Allocations: 17613)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:02:26 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.7ms | Allocations: 3122)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/grid.rb:28:in `export_daily'
+app/controllers/grids_controller.rb:24:in `to_export'
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:02:50 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.8ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 37.3ms | Allocations: 7982)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.2ms | Allocations: 10928)
+Completed 200 OK in 102ms (Views: 46.0ms | ActiveRecord: 5.9ms | Allocations: 18223)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:02:53 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"2", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25' and professional_id='2')[0m
+  ↳ app/models/grid.rb:31:in `find_all'
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:34:in `block in export_daily'
+  [1m[36mCACHE Professional Load (0.1ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (erb):24:in `block (2 levels) in export_daily'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 104ms (ActiveRecord: 2.5ms | Allocations: 10295)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:02:53 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 1607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 4617)
+Completed 200 OK in 43ms (Views: 26.5ms | ActiveRecord: 4.8ms | Allocations: 6820)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:05:51 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 1866)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 5125)
+Completed 200 OK in 60ms (Views: 45.6ms | ActiveRecord: 0.4ms | Allocations: 7869)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:05:52 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 25.9ms | Allocations: 6446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 9377)
+Completed 200 OK in 52ms (Views: 39.5ms | ActiveRecord: 0.7ms | Allocations: 11424)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:08:53 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 24.2ms | Allocations: 3330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 6322)
+Completed 200 OK in 102ms (Views: 37.5ms | ActiveRecord: 5.6ms | Allocations: 15329)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:08:54 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.5ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 17.2ms | Allocations: 5609)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.1ms | Allocations: 8671)
+Completed 200 OK in 61ms (Views: 40.9ms | ActiveRecord: 1.5ms | Allocations: 10882)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:09:02 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 19ms (ActiveRecord: 0.6ms | Allocations: 2107)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:09:02 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 4499)
+Completed 200 OK in 35ms (Views: 22.9ms | ActiveRecord: 0.5ms | Allocations: 6448)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:34:52 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.5ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 5861)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 9048)
+Completed 200 OK in 54ms (Views: 33.2ms | ActiveRecord: 1.6ms | Allocations: 12324)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:34:57 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-01", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.7ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? ORDER BY "professionals"."id" ASC LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:21:in `valid_professional?'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 19ms (ActiveRecord: 1.1ms | Allocations: 2081)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:34:57 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.5ms | Allocations: 4874)
+Completed 200 OK in 43ms (Views: 29.2ms | ActiveRecord: 0.5ms | Allocations: 7397)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:35:37 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 39.4ms | Allocations: 7995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 10941)
+Completed 200 OK in 98ms (Views: 51.1ms | ActiveRecord: 5.7ms | Allocations: 18240)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:35:44 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-12-24", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 16ms (ActiveRecord: 0.3ms | Allocations: 1396)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:35:44 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 14.6ms | Allocations: 1607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | Allocations: 4607)
+Completed 200 OK in 51ms (Views: 29.2ms | ActiveRecord: 0.6ms | Allocations: 7396)
+
+
+Started GET "/professionals/8/appointments" for 127.0.0.1 at 2021-12-03 16:39:53 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"8"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 8]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 23.9ms | Allocations: 5577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.2ms | Allocations: 8492)
+Completed 200 OK in 95ms (Views: 34.0ms | ActiveRecord: 4.7ms | Allocations: 22181)
+
+
+Started GET "/professionals/8/appointments/new" for 127.0.0.1 at 2021-12-03 16:39:56 -0300
+Processing by AppointmentsController#new as HTML
+  Parameters: {"professional_id"=>"8"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 32.9ms | Allocations: 1990)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 78.0ms | Allocations: 2464)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 89.6ms | Allocations: 5483)
+Completed 200 OK in 123ms (Views: 91.5ms | ActiveRecord: 1.2ms | Allocations: 9391)
+
+
+Started POST "/professionals/8/appointments" for 127.0.0.1 at 2021-12-03 16:40:22 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date"=>"2021-11-25T22:45", "name"=>"Ailin", "surname"=>"ALberti", "phone"=>"4432312", "notes"=>"una nota"}, "commit"=>"Create Appointment", "professional_id"=>"8"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:51:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 22:45:00"], ["professional_id", 8], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:51:in `valid_uniqueness?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:29:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/_form.html.erb (Duration: 7.0ms | Allocations: 1552)
+  Rendered appointments/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1662)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 4592)
+Completed 200 OK in 82ms (Views: 18.5ms | ActiveRecord: 1.2ms | Allocations: 13145)
+
+
+Started POST "/professionals/8/appointments" for 127.0.0.1 at 2021-12-03 16:41:44 -0300
+Processing by AppointmentsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "appointment"=>{"date"=>"2021-11-25T10:30", "name"=>"Ailin", "surname"=>"ALberti", "phone"=>"4432312", "notes"=>"una nota"}, "commit"=>"Create Appointment", "professional_id"=>"8"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/appointment.rb:51:in `valid_uniqueness?'
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."date" = ? AND "appointments"."professional_id" = ? ORDER BY "appointments"."id" ASC LIMIT ?[0m  [["date", "2021-11-25 10:30:00"], ["professional_id", 8], ["LIMIT", 1]]
+  ↳ app/models/appointment.rb:51:in `valid_uniqueness?'
+  [1m[36mAppointment Create (34.8ms)[0m  [1m[32mINSERT INTO "appointments" ("date", "name", "professional_id", "surname", "phone", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["date", "2021-11-25 10:30:00"], ["name", "Ailin"], ["professional_id", 8], ["surname", "ALberti"], ["phone", "4432312"], ["notes", "una nota"], ["created_at", "2021-12-03 19:41:44.762739"], ["updated_at", "2021-12-03 19:41:44.762739"]]
+  ↳ app/controllers/appointments_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:29:in `create'
+Redirected to http://127.0.0.1:3000/professionals/8/appointments/26
+Completed 302 Found in 165ms (ActiveRecord: 48.2ms | Allocations: 22300)
+
+
+Started GET "/professionals/8/appointments/26" for 127.0.0.1 at 2021-12-03 16:41:44 -0300
+Processing by AppointmentsController#show as HTML
+  Parameters: {"professional_id"=>"8", "id"=>"26"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 8], ["id", 26], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/show.html.erb within layouts/application
+  Rendered appointments/show.html.erb within layouts/application (Duration: 19.1ms | Allocations: 369)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 3700)
+Completed 200 OK in 64ms (Views: 34.7ms | ActiveRecord: 0.7ms | Allocations: 8120)
+
+
+Started GET "/professionals/8/appointments" for 127.0.0.1 at 2021-12-03 16:41:46 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 8]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1545)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 4539)
+Completed 200 OK in 60ms (Views: 22.8ms | ActiveRecord: 0.9ms | Allocations: 8520)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 16:41:52 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1533)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.2ms | Allocations: 5132)
+Completed 200 OK in 58ms (Views: 41.0ms | ActiveRecord: 0.6ms | Allocations: 7270)
+
+
+Started GET "/professionals/10/appointments" for 127.0.0.1 at 2021-12-03 16:41:53 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"10"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 10]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 1178)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 4270)
+Completed 200 OK in 60ms (Views: 28.5ms | ActiveRecord: 0.8ms | Allocations: 8104)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 16:41:55 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 4499)
+Completed 200 OK in 44ms (Views: 25.5ms | ActiveRecord: 0.5ms | Allocations: 6449)
+
+
+Started GET "/professionals/12/appointments" for 127.0.0.1 at 2021-12-03 16:41:55 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 12]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 3840)
+Completed 200 OK in 52ms (Views: 25.9ms | ActiveRecord: 0.7ms | Allocations: 7778)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 16:41:57 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 12.5ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 4507)
+Completed 200 OK in 44ms (Views: 25.7ms | ActiveRecord: 0.3ms | Allocations: 6458)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:41:59 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 20.1ms | Allocations: 5590)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 8521)
+Completed 200 OK in 51ms (Views: 35.3ms | ActiveRecord: 0.5ms | Allocations: 10545)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:42:08 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.2ms | Allocations: 4823)
+
+
+  
+NameError (undefined local variable or method `professional' for #<GridsController:0x0000000001c160>
+Did you mean?  professional_url):
+  
+app/controllers/grids_controller.rb:17:in `to_export'
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:42:34 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 39.4ms | Allocations: 7995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 50.7ms | Allocations: 10941)
+Completed 200 OK in 95ms (Views: 50.7ms | ActiveRecord: 4.3ms | Allocations: 18236)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:42:36 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.3ms | Allocations: 4799)
+
+
+  
+NameError (undefined local variable or method `professional' for #<GridsController:0x0000000001e2d0>
+Did you mean?  professional_url):
+  
+app/controllers/grids_controller.rb:18:in `to_export'
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:43:02 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 51ms (ActiveRecord: 3.4ms | Allocations: 7083)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:43:02 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 3328)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | Allocations: 6341)
+Completed 200 OK in 62ms (Views: 38.0ms | ActiveRecord: 2.1ms | Allocations: 9815)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:43:16 -0300
+Processing by GridsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (1.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 38.2ms | Allocations: 5630)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.3ms | Allocations: 8561)
+Completed 200 OK in 92ms (Views: 66.8ms | ActiveRecord: 1.6ms | Allocations: 10743)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:43:30 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 21ms (ActiveRecord: 2.0ms | Allocations: 1394)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:43:30 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 15.1ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 4499)
+Completed 200 OK in 51ms (Views: 33.5ms | ActiveRecord: 0.5ms | Allocations: 6445)
+
+
+Started GET "/grids/new" for 127.0.0.1 at 2021-12-03 16:46:53 -0300
+Processing by GridsController#new as HTML
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering grids/new.html.erb within layouts/application
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" ORDER BY "professionals"."name" ASC[0m
+  ↳ app/views/grids/new.html.erb:10
+  Rendered grids/new.html.erb within layouts/application (Duration: 32.0ms | Allocations: 7998)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 10944)
+Completed 200 OK in 92ms (Views: 42.5ms | ActiveRecord: 4.7ms | Allocations: 18421)
+
+
+Started POST "/grids" for 127.0.0.1 at 2021-12-03 16:47:02 -0300
+Processing by GridsController#to_export as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "day"=>"2021-11-25", "professional_id"=>"", "type"=>"Daily", "commit"=>"dia"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mAppointment Load (0.5ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE (strftime('%Y-%m-%d', date) = '2021-11-25')[0m
+  ↳ app/models/grid.rb:35:in `find_all'
+  [1m[36mProfessional Load (0.3ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/grid.rb:38:in `block in export_daily'
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ (erb):24:in `block (2 levels) in export_daily'
+  [1m[36mCACHE Professional Load (0.1ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ (erb):24:in `block (2 levels) in export_daily'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 105ms (ActiveRecord: 3.0ms | Allocations: 10608)
+
+
+Started GET "/" for 127.0.0.1 at 2021-12-03 16:47:02 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (0.4ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 4612)
+Completed 200 OK in 34ms (Views: 21.4ms | ActiveRecord: 0.6ms | Allocations: 6815)
+
+
+Started GET "/professionals/8/appointments" for 127.0.0.1 at 2021-12-03 16:47:37 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"8"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 8]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 14.7ms | Allocations: 1627)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 4674)
+Completed 200 OK in 67ms (Views: 31.3ms | ActiveRecord: 4.6ms | Allocations: 9286)
+
+
+Started GET "/professionals/8/appointments/26" for 127.0.0.1 at 2021-12-03 16:47:41 -0300
+Processing by AppointmentsController#show as HTML
+  Parameters: {"professional_id"=>"8", "id"=>"26"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mAppointment Load (9.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ? AND "appointments"."id" = ? LIMIT ?[0m  [["professional_id", 8], ["id", 26], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/show.html.erb within layouts/application
+  Rendered appointments/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 3138)
+Completed 200 OK in 63ms (Views: 14.1ms | ActiveRecord: 9.6ms | Allocations: 7892)
+
+
+Started GET "/professionals/8/appointments" for 127.0.0.1 at 2021-12-03 16:47:44 -0300
+Processing by AppointmentsController#index as HTML
+  Parameters: {"professional_id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProfessional Load (0.2ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals" WHERE "professionals"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering appointments/index.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."professional_id" = ?[0m  [["professional_id", 8]]
+  ↳ app/views/appointments/index.html.erb:15
+  Rendered appointments/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 4504)
+Completed 200 OK in 69ms (Views: 33.9ms | ActiveRecord: 0.7ms | Allocations: 8437)
+
+
+Started GET "/professionals" for 127.0.0.1 at 2021-12-03 16:47:52 -0300
+Processing by ProfessionalsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering professionals/index.html.erb within layouts/application
+  [1m[36mProfessional Load (2.6ms)[0m  [1m[34mSELECT "professionals".* FROM "professionals"[0m
+  ↳ app/views/professionals/index.html.erb:14
+  Rendered professionals/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 1505)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 5108)
+Completed 200 OK in 55ms (Views: 36.3ms | ActiveRecord: 3.2ms | Allocations: 7058)
+
+

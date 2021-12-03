@@ -7,7 +7,7 @@
     </div>
     <div class="field">
       <%= form.label :professional %><br>
-      <%= form.collection_select :professional_id, Professional.order(:name), :id, :name %>
+      <%= form.collection_select :professional_id, Professional.order(:name), :id, :name, :include_blank=>"Todos"  %>
     </div>
     <div class="field">
       <%= form.label :grid  %>
