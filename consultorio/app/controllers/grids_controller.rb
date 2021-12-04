@@ -11,9 +11,10 @@ class GridsController < ApplicationController
       puts params[:day]
       puts params[:professional_id]
       puts params[:type]
+      type=params[:type]
       day=params[:day]
       puts day.class
-      
+      puts "tipoo"
       #puts professional
       if params[:professional_id]==""
         puts "es string vacio"
@@ -22,10 +23,12 @@ class GridsController < ApplicationController
         professional=params[:professional_id]
       end
       @grid=Grid.new(day=day,professional=professional)
-      if @grid.valid_day? and @grid.valid_professional?
-        puts "validoo"
-        
+      if (not @grid.valid_day?) || (not @grid.valid_professional?)
+        puts "no validoo"
+      elsif type=="daily"
         @grid.export_daily
+      else
+        @grid.export_weekly
       end
       if params[:commit] == 'dia'
         puts "dia"

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <title> Turnos </title>
+                <meta charset="UTF-8">
+              </head>
+              <body>
+                <table style="width:30%" border=1>
+                  <tr>
+                    <th> Hora/Dia</th>
+                  
+                    <th><%= self.day %></th>
+                 
+                  </tr>
+                  <% schedule.each do |hs| %>
+                  <tr>
+                 
+                    <td><%= hs %></td>
+                    <td >
+                    <% for paciente in appointments.find_all{ |app| app.date.strftime("%H:%M")==hs} do %>
+                        
+                   
+                            <div><%=paciente.surname  %> 
+                            <%= paciente.name %> (<%= paciente.professional.name %>)</div> 
+                     <% end %>
+                     </td>
+                     </tr>
+                <% end %>
+                </table>
+              </body>
+            </html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+        <html lang="en">
+          <head>
+            <title> Turnos </title>
+            <meta charset="UTF-8">
+          </head>
+          <body>
+            <table style="width:90%" border>
+              <tr>
+                <th> Hora/Dia</th>
+                <% week.inject(0) do |i,w|  %>
+                    <th><%=w  %> <%= semana.pop %></th>
+                <% end  %>
+             
+              </tr>
+        
+                <% schedule.each do |hs| %>
+                  <tr>
+                  <td><%= hs %></td>
+                    <% week.each do |w| %>
+                       <td >
+    
+                       <% for paciente in appointments.find_all{ |app| app.date.strftime("%H:%M")==hs and app.date.strftime("%Y-%m-%d") == w} do %>
+                    
+               
+                          <div><%=paciente.surname  %> 
+                            <%= paciente.name %> (<%= paciente.professional.name %>)</div> 
+                        <% end %></td>
+                 
+                    <% end %> </tr>
+                <% end %>
+            
+                
+            </table>
+          </body>
+        </html>
