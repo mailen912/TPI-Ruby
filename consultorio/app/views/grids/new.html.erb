@@ -1,6 +1,15 @@
 <%= form_with url: "/grids", method: :post do |form| %>
-    
-  
+  <% if @errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+    <ul>
+      <% @errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
     <div class="field">
       <%= form.label :day %><br>
       <%= form.date_field :day %>
@@ -14,6 +23,6 @@
       <%= form.collection_radio_buttons :type,  ['Daily', 'Weekly'],:to_s, :to_s%>
     </div>
     <div class="actions">
-      <%= form.submit "dia"%>
+      <%= form.submit "Download grid"%>
     </div>
   <% end %>

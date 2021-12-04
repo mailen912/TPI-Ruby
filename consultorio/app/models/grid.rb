@@ -64,12 +64,11 @@ class Grid
         semana=%w[lunes martes miercoles jueves viernes sabado]
         puts week
         if professional.nil?
-          appointments=Appointment.where("strftime('%Y-%m-%d', date) = ?", week[0]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[1]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[2]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[3]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[4]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[5])))))
+          appointments=Appointment.where("strftime('%Y-%m-%d', date) = ?", week[0]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[1]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[2]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[3]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[4]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[5]))))))
         else
-          appointments=Appointment.where("strftime('%Y-%m-%d', date) = ? or professional_id?", self.day, self.professional )
+          appointments=Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[0], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[1], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[2], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=? ", week[3], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[4], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[5], self.professional))))))
+          
         end
-        puts self.day
-        puts appointments
 
         
         template = ERB.new (Rails.root.join('app/templates/grids/weekly.html.erb')).read
@@ -78,5 +77,5 @@ class Grid
         File.open( "#{Dir.home}/grilla_diaria.html", "w+") do |f|
             f.write(template.result binding)
         end
-        end
+      end
 end

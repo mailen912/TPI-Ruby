@@ -9,7 +9,7 @@
               <tr>
                 <th> Hora/Dia</th>
                 <% week.inject(0) do |i,w|  %>
-                    <th><%=w  %> <%= semana.pop %></th>
+                    <th><%=w  %><br> <%= semana.shift %></th>
                 <% end  %>
              
               </tr>
