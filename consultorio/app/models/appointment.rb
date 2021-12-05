@@ -1,17 +1,18 @@
 require 'date'
 class Appointment < ApplicationRecord
   belongs_to :professional
-  validates :date, presence: true
+  validates :date, presence: true,uniqueness: { scope: [:professional_id] }
   validates :name, presence: true
   validates :surname, presence:true
   validates :phone, presence:true
   validates :notes, presence:false, length: { maximum: 50 }
-  validate  :is_sunday?, :valid_time?,  :valid_uniqueness?#, :valid_date?
+
+  validate  :is_sunday?, :valid_time?,   :valid_date?#:valid_uniqueness?,
 
 
   def is_sunday?
     if self.date.sunday?
-      errors.add :date, "No se dan turnos para los dias domingo"
+      errors.add :date, "Professionals don't work on Sundays, please request another day"
   
     end
   end
@@ -29,27 +30,22 @@ class Appointment < ApplicationRecord
   def valid_time?
     
     if not Appointment.schedule.include?(self.date.strftime('%H:%M')) 
-      errors.add :date, "No se pudo crear el turno. Los horarios permitidos para sacar turno son entre las 10:00 y las 20:30 y solo en los minutos: 00 y 30. Por ejemplo: 11:30"
+      errors.add :date, "The appointment could not be created. The hours allowed to take appointments are between 10:00 and 20:30 and only in the minutes: 00 and 30. For example: 11:30"
     end
   end 
 
-  def valid_date?#no funciona
+  def valid_date?
     begin
-      puts "ACA"
-      puts (self.date)
-      puts self.date.class
-      self.date=self.date.to_datetime
-      puts self.date.class
-      puts (self.date.strptime("%Y-%m-%d %H:%M:%S"))
+      DateTime.strptime(self.date.to_s,  '%Y-%m-%d %H:%M:%S')
     rescue => exception
-      errors.add :date, "El formato de la fecha es invalido"
+      errors.add :date, "The date format is invalid"
     end
     
   end
 
   def valid_uniqueness?
     if Appointment.where(date:self.date, professional_id:self.professional_id).first
-      errors.add :date, "La fecha ingresada no esta disponible, por favor solicite otra"
+      errors.add :date, "The entered date is not available, please request another one"
     end
   end
 
