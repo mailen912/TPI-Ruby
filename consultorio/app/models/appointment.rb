@@ -7,7 +7,7 @@ class Appointment < ApplicationRecord
   validates :phone, presence:true
   validates :notes, presence:false, length: { maximum: 50 }
 
-  validate  :is_sunday?, :valid_time?,   :valid_date?#:valid_uniqueness?,
+  validate  :is_sunday?, :valid_time?,   :valid_date?
 
 
   def is_sunday?
@@ -41,12 +41,6 @@ class Appointment < ApplicationRecord
       errors.add :date, "The date format is invalid"
     end
     
-  end
-
-  def valid_uniqueness?
-    if Appointment.where(date:self.date, professional_id:self.professional_id).first
-      errors.add :date, "The entered date is not available, please request another one"
-    end
   end
 
 end

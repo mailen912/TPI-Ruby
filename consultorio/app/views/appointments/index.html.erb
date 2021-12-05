@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Appointments</h1>
-<%= link_to 'Back', professionals_path %>
+<%= link_to 'Back', professionals_path %><br>
+<% if not @appointments.any? %>
+  <i>There are not appointments yet</i>
+<%else%>
 <table>
   <thead>
     <tr>
@@ -20,7 +23,7 @@
         <% end %>
         <% if can? :write, appointment %>
           <td><%= link_to 'Edit', edit_professional_appointment_path(@professional,appointment) %></td>
-          <td><%= link_to 'Destroy', [@professional, appointment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Cancel', [@professional, appointment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -29,6 +32,10 @@
 
 <br>
 <% if can? :write, Appointment %>
+  <td><%= link_to 'Cancel all', cancelall_professional_appointments_path(@professional), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<% end %>
+<%end%>
+<br>
+<% if can? :write, Appointment %>
   <%= link_to 'New Appointment', new_professional_appointment_path(@professional) %>
-  <td><%= link_to 'Destroy all', cancelall_professional_appointments_path(@professional), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>

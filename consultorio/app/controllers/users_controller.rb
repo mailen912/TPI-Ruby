@@ -22,6 +22,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
+    puts "ACAAAAAAAAAAAAAA"
     pass= params[:user][:password]
     role= params[:user][:role]
     email= params[:user][:email]
@@ -30,13 +31,13 @@ class UsersController < ApplicationController
     puts role
     puts email
     role=role.to_i
-    @user = User.new(email:email,password:pass,role:role)
+    #@user = User.new(email:email,password:pass,role:role)
 
-    if @user.save
-      redirect_to @user, notice: 'User was successfully created.'
-    else
-      render :new
-    end
+    #if @user.save
+    #  redirect_to @user, notice: 'User was successfully created.'
+    #else
+    #  render :new
+    #end
   end
 
   # PATCH/PUT /users/1

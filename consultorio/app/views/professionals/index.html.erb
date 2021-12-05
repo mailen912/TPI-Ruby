@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Professionals</h1>
+<% if not @professionals.any? %>
+  <i>There are not professionals yet</i>
+<%else%>
 
 <table>
   <thead>
@@ -21,15 +24,19 @@
           <td><%= link_to 'Edit', edit_professional_path(professional) %></td>
           <td><%= link_to 'Destroy', professional, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <%end%>
-        <td><%= link_to 'Appointments', professional_appointments_path(professional) %></td>
+        <% if can? :read, professional %>
+          <td><%= link_to 'Appointments', professional_appointments_path(professional) %></td>
+        <%end%>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<% end %>
 <br>
-<% if can? :write, current_user %>
+<% if can? :write, Professional %>
   <%= link_to 'New Professional', new_professional_path %>
+<% end %>
+<% if can? :write, User %>
   <%= link_to 'See users', users_path %>
 <% end %>
 <%= link_to 'Download information', grids_new_path %>

@@ -9,11 +9,8 @@ class GridsController < ApplicationController
     # POST /grids
     def to_export
       @errors=[]
-      puts "en export"
-      
       type=params[:type]
       day=params[:day]
-      puts day.class
       if  params[:day]==""
         @errors.push("Day can't be blank")
       end
@@ -22,22 +19,19 @@ class GridsController < ApplicationController
       end
       if @errors.count==0
         if params[:professional_id]==""
-          puts "es string vacio"
           professional=nil
         else
           professional=params[:professional_id]
         end
         @grid=Grid.new(day=day,professional=professional)
         if (not @grid.valid_day?) || (not @grid.valid_professional?)
-          puts "no validoo"
           @errors.push("The day entered and/or the professional are incorrect")
         elsif type=="Daily"
-          puts "entree"
           @grid.export_daily
-          name="grilla_dia"
+          name="daily_grid"
         else
           @grid.export_weekly
-          name="grilla_diaria"
+          name="weekly_grid"
         end
 
       end

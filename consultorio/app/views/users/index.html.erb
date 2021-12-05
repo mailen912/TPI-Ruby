@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to 'Back', professionals_path %>
 <h1>Users</h1>
 
-<table border=1>
+<table >
   <thead>
     <tr>
       <th>Email</th>
       <th>Role</th>
-      <th>Actions</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,14 +17,19 @@
       <tr>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
-        <td><%= link_to 'Show', user %>
-        <%= link_to 'Edit', edit_user_path(user) %>
-        <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if can? :read, User %>
+          <td><%= link_to 'Show', user %>
+        <% end %>
+        <% if can? :write, User %>
+          <%= link_to 'Edit', edit_user_path(user) %>
+          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if can? :write, User %>
 <%= link_to 'New User', new_user_path %>
+<% end %>

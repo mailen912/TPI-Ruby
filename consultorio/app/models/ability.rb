@@ -13,7 +13,8 @@ class Ability
         can :manage, Appointment
         can :read, Professional
       else
-        can :read, :all
+        can :read, Appointment
+        can :read, Professional
       end
     #
     # The first argument to `can` is the action you are giving the user

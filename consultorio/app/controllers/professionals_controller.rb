@@ -47,15 +47,11 @@ class ProfessionalsController < ApplicationController
       redirect_to professionals_url, notice: 'Professional was successfully destroyed.'
     rescue
       #tengo que avisar que no puede
-      redirect_to professionals_url, notice: 'Professional has appointments'
+      redirect_to professionals_url, notice: "The professional could not be destroyed because he/she has appointments."
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_professional
-      @professional = Professional.find(params[:id])
-    end
 
     # Only allow a list of trusted parameters through.
     def professional_params
