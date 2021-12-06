@@ -24,7 +24,7 @@
   <div class="field">
     <%= form.label :role %>
     
-    <%= form.select :role, User.roles, selected: user.read_attribute_before_type_cast(:role) %>
+    <%= form.select :role, User.roles.keys, selected:user.role%>
   </div>
 
   <div class="actions">

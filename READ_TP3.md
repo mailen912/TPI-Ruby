@@ -9,4 +9,3 @@ La aplicacion esta en ingles por simplicidad y asi llegar a tiempo con la entreg
 Para esta entrega se pidio manejo de usuarios. Dado que las personas no autenticadas no podrán acceder a ningún dato del sistema; el set de datos inicial es: 'admin@gmail.com', password: '123456' para el rol administrador; email: 'asistencia@gmail.com', password: '123456', para el rol asistencia; y email: 'consulta@gmail.com', password: '123456'para el rol consulta
 Los administradores son los unicos que  pueden gestionar a los usuarios, y pueden si lo desean, eliminarse a si mismos.
 Para levantar la aplicacion rails, primero se debe entrar al directorio consultorio(cd consultorio) y luego ingresar rails server
-La creacion de usuarios no funciona
