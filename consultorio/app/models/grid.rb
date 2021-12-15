@@ -1,4 +1,3 @@
-require 'date'
 class Grid
     #validate :day
     #validates :professional, presence: false 

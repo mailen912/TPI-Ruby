@@ -1,4 +1,3 @@
-require 'date'
 class Appointment < ApplicationRecord
   belongs_to :professional
   validates :date, presence: true,uniqueness: { scope: [:professional_id] }

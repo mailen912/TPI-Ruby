@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments
   def index
-    @appointments = @professional.appointments.all
+   
   end
 
   # GET /appointments/1
