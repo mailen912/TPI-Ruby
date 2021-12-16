@@ -42,10 +42,9 @@ class ProfessionalsController < ApplicationController
 
   # DELETE /professionals/1
   def destroy
-    begin
-      @professional.destroy
+    if @professional.destroy
       redirect_to professionals_url, notice: 'Professional was successfully destroyed.'
-    rescue
+    else
       #tengo que avisar que no puede
       redirect_to professionals_url, notice: "The professional could not be destroyed because he/she has appointments."
     end
