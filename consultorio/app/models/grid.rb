@@ -25,47 +25,61 @@ class Grid
     end
 
     def self.get_week(day)
-      num_resta = Integer(Date.parse(day).strftime("%u"))-1 
-      monday = Date.parse(day) - num_resta
-      week=[]
-      week.push(monday.to_s)
-      for d in (1..5)
-          week.push((monday + d).to_s)
+      day_date = Date.strptime(day, "%Y-%m-%d")
+      week=day_date.all_week 
+      week=week.to_a
+    end
+
+    def self.generating_grid(type,appointments, day,entry, output)
+      schedule=Appointment.schedule
+      if type=="weekly"
+        days=%w[lunes martes miercoles jueves viernes sabado domingo]
+        week=Grid.get_week(day)
       end
-      week
+      template = ERB.new (Rails.root.join("#{entry}")).read
+      puts template.result binding
+      File.open( "#{Dir.home}/#{output}", "w+") do |f|
+         f.write(template.result binding)
+    end
     end
 
     def export_daily
-      schedule=Appointment.schedule
-      if professional.nil?
-        appointments=Appointment.where("strftime('%Y-%m-%d', date) = ?", self.day)
-      else
-        appointments=Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", self.day, self.professional )
-      end
-       template = ERB.new (Rails.root.join('app/templates/grids/daily.html.erb')).read
       
-        File.open( "#{Dir.home}/daily_grid.html", "w+") do |f|
-            f.write(template.result binding)
-        end
+      #if professional.nil?
+        appointments=Appointment.by_day(self.day)
+        appointments=appointments.where(professional_id: professional) if professional
+      #else
+       # appointments=Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", self.day, self.professional )
+      #end
+      type="daily"
+      Grid.generating_grid(type,appointments, self.day,'app/templates/grids/daily.html.erb','daily_grid.html')
+       #template = ERB.new (Rails.root.join('app/templates/grids/daily.html.erb')).read
+      
+       # File.open( "#{Dir.home}/daily_grid.html", "w+") do |f|
+       #     f.write(template.result binding)
+       # end
       end
 
       def export_weekly
-        schedule=Appointment.schedule
-        week=Grid.get_week(self.day)            
-        semana=%w[lunes martes miercoles jueves viernes sabado]
+        week=Grid.get_week(self.day)   
+        #semana=%w[lunes martes miercoles jueves viernes sabado domingo]
+        #appointments=Appointment.by_day(week[0]).or()
         if professional.nil?
-          appointments=Appointment.where("strftime('%Y-%m-%d', date) = ?", week[0]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[1]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[2]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[3]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[4]).or(Appointment.where("strftime('%Y-%m-%d', date) = ?", week[5]))))))
+          appointments=Appointment.by_day( week[0]).or(Appointment.by_day(week[1]).or(Appointment.by_day(week[2]).or(Appointment.by_day(week[3]).or(Appointment.by_day( week[4]).or(Appointment.by_day( week[5]))))))
         else
-          appointments=Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[0], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[1], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[2], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=? ", week[3], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[4], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[5], self.professional))))))
+          appointments=Appointment.by_day_and_professional( week[0], self.professional).or(Appointment.by_day_and_professional( week[1], self.professional).or(Appointment.by_day_and_professional(week[2], self.professional).or(Appointment.by_day_and_professional( week[3], self.professional).or(Appointment.by_day_and_professional(week[4], self.professional).or(Appointment.by_day_and_professional(week[5], self.professional))))))
+          #appointments=Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[0], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[1], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[2], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=? ", week[3], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[4], self.professional).or(Appointment.where("strftime('%Y-%m-%d', date) = ? and professional_id=?", week[5], self.professional))))))
           
         end
-
+        type="weekly"
+        Grid.generating_grid(type,appointments, self.day,'app/templates/grids/weekly.html.erb','weekly_grid.html')
+        #week=week.to_a
         
-        template = ERB.new (Rails.root.join('app/templates/grids/weekly.html.erb')).read
+        #template = ERB.new (Rails.root.join('app/templates/grids/weekly.html.erb')).read
         
         
-        File.open( "#{Dir.home}/weekly_grid.html", "w+") do |f|
-            f.write(template.result binding)
-        end
+        #File.open( "#{Dir.home}/weekly_grid.html", "w+") do |f|
+        #    f.write(template.result binding)
+        #end
       end
 end

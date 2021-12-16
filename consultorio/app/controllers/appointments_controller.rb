@@ -15,7 +15,7 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/new
   def new
-    @appointment = @professional.appointments.new
+    @appointment = @professional.appointments.new#probar borrar
   end
 
   # GET /appointments/1/edit
@@ -24,7 +24,7 @@ class AppointmentsController < ApplicationController
 
   # POST /appointments
   def create
-    @appointment = @professional.appointments.new(appointment_params)
+    @appointment = @professional.appointments.new(appointment_params)#
 
     if @appointment.save
       redirect_to [@professional, @appointment] , notice: 'Appointment was successfully created.'
@@ -49,6 +49,7 @@ class AppointmentsController < ApplicationController
   end
 
   def cancel_all
+    #@professional.appointments.destroy_all
     @professional.appointments.all.each do
       |app| app.destroy 
     end

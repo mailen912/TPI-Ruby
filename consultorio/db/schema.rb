@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 2021_11_28_222828) do
     t.integer "professional_id", null: false
     t.string "surname", null: false
     t.string "phone", null: false
-    t.string "notes"
+    t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["professional_id"], name: "index_appointments_on_professional_id"
   end
 
   create_table "professionals", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["name"], name: "index_professionals_on_name", unique: true

@@ -4,12 +4,13 @@
             <title> Turnos </title>
             <meta charset="UTF-8">
           </head>
+          <%= days%>
           <body>
             <table style="width:90%" border>
               <tr>
                 <th> Hora/Dia</th>
                 <% week.inject(0) do |i,w|  %>
-                    <th><%=w  %><br> <%= semana.shift %></th>
+                    <th><%=w  %><br> <%= days.shift %></th>
                 <% end  %>
              
               </tr>
@@ -20,7 +21,7 @@
                     <% week.each do |w| %>
                        <td >
     
-                       <% for paciente in appointments.find_all{ |app| app.date.strftime("%H:%M")==hs and app.date.strftime("%Y-%m-%d") == w} do %>
+                       <% for paciente in appointments.find_all{ |app| app.date.strftime("%H:%M")==hs and app.date.strftime("%Y-%m-%d") == w.to_s} do %>
                     
                
                           <div><%=paciente.surname  %> 
@@ -32,5 +33,6 @@
             
                 
             </table>
+            <%= days%>
           </body>
         </html>
