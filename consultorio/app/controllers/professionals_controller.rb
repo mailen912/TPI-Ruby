@@ -46,7 +46,7 @@ class ProfessionalsController < ApplicationController
       redirect_to professionals_url, notice: 'Professional was successfully destroyed.'
     else
       #tengo que avisar que no puede
-      redirect_to professionals_url, notice: "The professional could not be destroyed because he/she has appointments."
+      redirect_to professionals_url, alert: "The professional could not be destroyed because he/she has appointments."
     end
   end
 

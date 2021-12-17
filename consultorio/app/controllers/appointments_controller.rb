@@ -1,8 +1,6 @@
 class AppointmentsController < ApplicationController
   load_and_authorize_resource :professional
   load_and_authorize_resource :appointment, through: :professional
-  #before_action :set_professional
-  #before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   # GET /appointments
   def index
@@ -15,7 +13,6 @@ class AppointmentsController < ApplicationController
 
   # GET /appointments/new
   def new
-    @appointment = @professional.appointments.new#probar borrar
   end
 
   # GET /appointments/1/edit
@@ -24,7 +21,6 @@ class AppointmentsController < ApplicationController
 
   # POST /appointments
   def create
-    @appointment = @professional.appointments.new(appointment_params)#
 
     if @appointment.save
       redirect_to [@professional, @appointment] , notice: 'Appointment was successfully created.'
@@ -49,10 +45,7 @@ class AppointmentsController < ApplicationController
   end
 
   def cancel_all
-    #@professional.appointments.destroy_all
-    @professional.appointments.all.each do
-      |app| app.destroy 
-    end
+    @professional.appointments.destroy_all
     redirect_to  professional_appointments_url(@professional), notice: 'Appointments were successfully destroyed.'
   end
 
