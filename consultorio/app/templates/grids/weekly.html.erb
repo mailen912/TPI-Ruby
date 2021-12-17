@@ -4,13 +4,12 @@
             <title> Turnos </title>
             <meta charset="UTF-8">
           </head>
-          <%= days%>
           <body>
             <table style="width:90%" border>
               <tr>
                 <th> Hora/Dia</th>
                 <% week.inject(0) do |i,w|  %>
-                    <th><%=w  %><br> <%= days.shift %></th>
+                    <th><%=w  %><br> <%= semana.shift %></th>
                 <% end  %>
              
               </tr>
@@ -33,6 +32,5 @@
             
                 
             </table>
-            <%= days%>
           </body>
         </html>

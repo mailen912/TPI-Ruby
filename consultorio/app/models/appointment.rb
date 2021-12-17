@@ -7,10 +7,7 @@ class Appointment < ApplicationRecord
   validates :notes, presence:false, length: { maximum: 50 }
 
   validate  :is_sunday?, :valid_time?,   :valid_date?
-
-  scope :by_day, ->(date) { where("strftime('%Y-%m-%d', date) = ?", date) }
-  scope :by_day_and_professional, ->(date, professional_id) { where("strftime('%Y-%m-%d', date) = ? and professional_id=?", date, professional_id) }
-  #"strftime('%Y-%m-%d', date) = ? and professional_id=?"
+  scope :by_date, ->(date) { where("strftime('%Y-%m-%d', date) IN (?)", Array(date)) }
   def is_sunday?
     if self.date.sunday?
       errors.add :date, "Professionals don't work on Sundays, please request another day"
